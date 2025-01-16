@@ -3,6 +3,8 @@ import space from "../assets/images/boost.svg";
 import storage from "../assets/images/cloud.svg";
 import desktop from "../assets/images/web.svg";
 import shield from "../assets/images/protected.svg";
+import HighlightedHeading from '../components/HighlightedHeading'; // Adjust path
+
 
 const Care = () => {
     const data = [
@@ -35,7 +37,10 @@ const Care = () => {
     return (
         <section className='py-10'>
             <div className='container mx-auto'>
-                <h1 className='md:text-xlarge text-basic font-bold text-primary'>We've Got it <span className='bg-gradient rounded-full text-[#1D49C3] pt-2 font-bold '>All Taken Care of</span> </h1>
+                <HighlightedHeading
+                    mainText="We've Got it "
+                    highlightedText="All Taken Care of"
+                />
                 <div className="bg-white mt-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {data.map(item => (

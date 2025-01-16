@@ -1,8 +1,9 @@
 import React from 'react'
 import hero from "../assets/images/Hero-section.png";
+import HighlightedHeading from '../components/HighlightedHeading'; // Adjust path
 
 
-const Hero_Section = () => {
+const MainHeroSection = () => {
     return (
         <section className="bg-white">
             <div className="container mx-auto flex items-center justify-between">
@@ -30,4 +31,4 @@ const Hero_Section = () => {
     )
 }
 
-export default Hero_Section
+export default MainHeroSection

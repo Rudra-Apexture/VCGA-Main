@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero_Section from './Hero_Section'
+import MainHeroSection from './MainHeroSection'
 import Care from './Care'
 import Trusted from './Trusted'
 import YourChoice from './YourChoice'
@@ -8,13 +8,11 @@ import Satisfaction from './Satisfaction'
 import CaseStudies from './CaseStudies'
 import FAQ from './FAQ'
 import Blog from './Blog'
-import footer from "./Footer"
-import Footer from './Footer'
 
 const Home_Page = () => {
     return (
-        <div>
-            <Hero_Section />
+        <>
+            <MainHeroSection />
             <Care />
             <Trusted />
             <YourChoice />
@@ -23,8 +21,7 @@ const Home_Page = () => {
             <CaseStudies />
             <FAQ />
             <Blog />
-            <Footer />
-        </div>
+        </>
     )
 }
 

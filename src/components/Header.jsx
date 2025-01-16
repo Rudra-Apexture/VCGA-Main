@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import logo from "../assets/images/logo.png";
 import { IoMdMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
+import { Link } from 'react-router';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,7 +60,9 @@ const Header = () => {
             <div className="container mx-auto flex justify-between items-center">
                 {/* <!-- Logo (Left Side) --> */}
                 <div className="flex items-center">
-                    <img src={logo} alt="VCGA Logo" className="md:h-10 h-8 mr-2" />
+                    <Link to="/">
+                        <img src={logo} alt="VCGA Logo" className="md:h-10 h-8 mr-2" />
+                    </Link>
                 </div>
 
                 {/* <!-- Mobile Menu Icon --> */}
@@ -73,7 +76,7 @@ const Header = () => {
 
                 {/* <!-- Navigation (Desktop) --> */}
                 <nav className="hidden lg:flex space-x-10 items-center z-10">
-                    <a href="#" className="text-primary font-medium text-medium  hover:text-blues transition-colors duration-200">Services</a>
+                    <Link to="/services" className="text-primary font-medium text-medium  hover:text-blues transition-colors duration-200">Services</Link>
                     <a href="#" className="text-primary font-medium text-medium  hover:text-blues transition-colors duration-200">Case Studies</a>
                     <a href="#" className="text-primary font-medium text-medium  hover:text-blues transition-colors duration-200">Blog</a>
                     <a href="#" className="text-primary font-medium text-medium  hover:text-blues transition-colors duration-200">Reviews</a>
