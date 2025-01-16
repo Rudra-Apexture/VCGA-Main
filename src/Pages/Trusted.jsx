@@ -1,4 +1,5 @@
 import React from 'react';
+import HighlightedHeading from '../components/HighlightedHeading';
 
 const Trusted = () => {
     const data = [
@@ -23,7 +24,11 @@ const Trusted = () => {
     return (
         <section className="bg-white lg:py-12">
             <div className="container mx-auto">
-                <h1 className='md:text-xlarge text-basic font-bold text-center text-primary'>Your Trusted Partner in <span className='bg-gradient rounded-full text-[#1D49C3] pt-2 font-bold '> WordPress Care</span> </h1>
+                <HighlightedHeading
+                    mainText="Your Trusted Partner in  "
+                    highlightedText="WordPress Care"
+                    center={true}
+                />
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12">
                     {data.map(item => (
                         <div key={item.id} className="flex flex-col items-center justify-center space-y-5">

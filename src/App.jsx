@@ -1,13 +1,10 @@
 import React from 'react'
-import Header from "./components/Header";
-import Home_Page from './Pages/Home_Page';
-
+import Website_Route from './Pages/Website_Route'
 
 const App = () => {
   return (
     <div>
-      <Header />
-      <Home_Page />
+      <Website_Route />
     </div>
   )
 }
