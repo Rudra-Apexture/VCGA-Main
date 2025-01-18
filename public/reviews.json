@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "name": "Tom Diaz",
+        "image": "./assets/Tom.jpg",
+        "review": "As a blogger, I spent too much time updating plugins and dealing with minor issues that slowed down my site. After using their WordPress maintenance service for just 2 months, my site is now 40% faster, and I've seen a 25% increase in search engine rankings. The best part? I haven't had a single technical issue in over 8 weeks. Their team knows what they're doing.",
+        "stars": 5
+    },
+    {
+        "id": 2,
+        "name": "John Taylor",
+        "image": "/assets/John-Taylor.jpg",
+        "review": "Their WordPress consistency services are excellent! I have never experienced any downtime since I signed up, and my e-commerce site is always current. The ideal solution for small business owners who require peace of mind.",
+        "stars": 5
+    },
+    {
+        "id": 3,
+        "name": "Sarah Mitchell",
+        "image": "/assets/Sarah-Mitchell-1.jpg",
+        "review": "This is hands down one of the best services we’ve ever partnered with. The pricing is fair, the customer service is outstanding, and the quality of their work is top-tier. We’ve been with them for about eight months now, and we can’t imagine managing our site without their support. Their service is incredibly valuable and has made a huge difference for us. Big thanks to the team!",
+        "stars": 5
+    },
+    {
+        "id": 4,
+        "name": "James Collins",
+        "image": "/assets/James-Collins-1.jpg",
+        "review": "My site traffic has increased dramatically since working with this service, and their optimization efforts have made my site much faster. I’ve never had to wait more than a few hours for a response because of their excellent communication. They are a truly excellent team, and I would not think twice about recommending them to others!",
+        "stars": 5
+    },
+    {
+        "id": 5,
+        "name": "Lisa Carter",
+        "image": "/assets/Lisa-Carter.jpg",
+        "review": "My site’s performance has significantly improved since I signed up. I’ve learned a lot from their tutorials, and their staff is always quick to reply. They’re consistently spot on whether it’s error correction, feature addition, or speed optimization. Highly recommend their services!",
+        "stars": 5
+    },
+    {
+        "id": 6,
+        "name": "Emily Clarke",
+        "image": "/assets/Emily.jpg",
+        "review": "I was having trouble getting my first blog up and running, but these tutorials made it so easy! Even for beginners like me, following the detailed instructions is simple. I’ve now launched a fully functional blog. I heartily recommend it!",
+        "stars": 5
+    },
+    {
+        "id": 7,
+        "name": "Ryan Cooper",
+        "image": "/assets/Ryan.jpg",
+        "review": "As a first-time blogger, I was overwhelmed by WordPress, but their tutorials made it so much easier! I set up my blog and even made it look professional in just one week. Their detailed instructions are ideal for beginners. My traffic has already started to increase.",
+        "stars": 5
+    },
+    {
+        "id": 8,
+        "name": "Amelia Brown",
+        "image": "/assets/Amelia.jpg",
+        "review": "This service is a lifesaver for my business. Their team optimizes my site regularly, keeps it secure, and ensures lightning-fast loading times. My clients have even complimented how smooth the site feels now. Highly recommend them!",
+        "stars": 5
+    },
+    {
+        "id": 9,
+        "name": "Jake Miller",
+        "image": "/assets/Jake.jpg",
+        "review": "I’ve been using their maintenance plan for almost a year now, and my site has never been more stable. They handle everything, from plugin updates to security patches. It’s a relief knowing my site is in good hands.",
+        "stars": 5
+    },
+    {
+        "id": 10,
+        "name": "Mark Evans",
+        "image": "/assets/Mark.jpg",
+        "review": "Their security services gave me peace of mind after my site was hacked. They cleaned everything up and set up protections to prevent it from happening again. Outstanding work!",
+        "stars": 5
+    },
+    {
+        "id": 11,
+        "name": "Henry Walker",
+        "image": "/assets/Henry.jpg",
+        "review": "Their blogging tutorials helped me grow my site from 100 monthly visitors to over 5,000! Their advice on content creation and SEO is priceless. I wouldn’t be where I am today without them.",
+        "stars": 5
+    },
+    {
+        "id": 12,
+        "name": "Liam Brown",
+        "image": "/assets/Liam.jpg",
+        "review": "This team is incredibly reliable. Whenever I have a question or issue, they respond quickly and resolve it effectively. Their support has been invaluable for my online store",
+        "stars": 5
+    },
+    {
+        "id": 13,
+        "name": "Rachel Thompson",
+        "image": "/assets/Rachel.jpg",
+        "review": "My life has been changed by this service. I used what to do. be connected to my pc for hours at a time, trying to solve problems and handle things that I didn’t know They take care of the rest with comfort, and I can now finally focus entirely on what I do best. genuinely transformative!",
+        "stars": 5
+    },
+    {
+        "id": 14,
+        "name": "Hannah Smith",
+        "image": "/assets/Hannah.jpg",
+        "review": "I’ve only been using VCGA for a few days, but I’m already blown away by how much they’ve helped. It feels like I’m working with a trusted friend who truly understands WordPress and handles every issue right away. Where have you been all this time? This service is a total game-changer!",
+        "stars": 5
+    }
+]
