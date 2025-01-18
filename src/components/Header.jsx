@@ -52,16 +52,16 @@ const Header = () => {
 
     return (
         <header
-            className={`top-0 z-30 relative transition-shadow duration-300 py-2 ${isHomePage
+            className={`top-0 z-30 relative transition-shadow duration-300 py-4 ${isHomePage
                 ? `${isSticky ? "bg-white shadow-main sticky py-2 " : ""}`
-                : "bg-white/60 shadow-header"
+                : "bg-white shadow-main"
                 }  ${isSticky ? `sticky` : ""}`}
         >
             <div className="container mx-auto flex justify-between items-center">
                 {/* <!-- Logo (Left Side) --> */}
                 <div className="flex items-center">
                     <Link to="/">
-                        <img src={logo} alt="VCGA Logo" className="md:h-10 h-8 mr-2" />
+                        <img src={logo} alt="VCGA Logo" className="md:h-11 h-8 mr-2" />
                     </Link>
                 </div>
 
@@ -75,13 +75,13 @@ const Header = () => {
                 </div>
 
                 {/* <!-- Navigation (Desktop) --> */}
-                <nav className="hidden lg:flex space-x-10 items-center z-10">
-                    <Link to="/services" className="text-primary font-medium text-medium  hover:text-blues transition-colors duration-200">Services</Link>
-                    <a href="#" className="text-primary font-medium text-medium  hover:text-blues transition-colors duration-200">Case Studies</a>
-                    <a href="#" className="text-primary font-medium text-medium  hover:text-blues transition-colors duration-200">Blog</a>
-                    <a href="#" className="text-primary font-medium text-medium  hover:text-blues transition-colors duration-200">Reviews</a>
-                    <a href="#" className="text-primary font-medium text-medium  hover:text-blues transition-colors duration-200">About Us</a>
-                    <a href="#" className="text-primary font-medium text-medium  hover:text-blues transition-colors duration-200">Contact Us</a>
+                <nav className="hidden lg:flex space-x-8 items-center z-10">
+                    <Link to="/services" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Services</Link>
+                    <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Case Studies</a>
+                    <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Blog</a>
+                    <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Reviews</a>
+                    <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">About Us</a>
+                    <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Contact Us</a>
 
                     <a href="#" className="bg-[#1A43B8] text-white px-6 py-2.5 rounded-xl font-medium text-medium hover:bg-blue-900 transition-colors duration-200">See Plans</a>
                 </nav>

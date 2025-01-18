@@ -1,20 +1,31 @@
-import React from 'react'
+import React from 'react';
 
 const HeroSection = () => {
     return (
-        <section className='services-hero py-12'>
-            <div className='container mx-auto'>
-                <div>
-                    <h1 className='text-4xl font-bold text-center'>
-                        Unlock Your Potential
+        <section className='services-hero'>
+            <div className="bg-light-blue lg:py-20 py-16 text-white">
+                <div className="max-w-5xl mx-auto md:space-y-8 space-y-4 px-4">
+                    <h2 className="lg:text-basic text-base font-bold mb-2 text-center">Services</h2>
+                    <h1 className="lg:text-[55px] md:text-4xl text-xlarge leading-[55px] font-bold text-white text-center">
+                        WordPress {' '}
+                        <span className="bg-gradient-2 rounded-full pt-2 font-bold">
+                            Maintenance Service
+                        </span>{' '}
                     </h1>
-                    <p className='text-center text-gray-600'>
-                        Our passion for technology and innovation is at the heart of everything we do. We strive to create products and services that not only enhance but also inspire.
-                    </p>
+                    <div className='flex justify-center'>
+                        <p className="mb-8 md:text-medium text-small md:max-w-[700px] md:leading-7 font-medium text-center">
+                            Are you struggling to manage WordPress? Let us handle all the technical
+                            details with 24/7 support, giving you a hassle-free website that will
+                            effortlessly grow your business.
+                        </p>
+                    </div>
+                    <div className='flex justify-center'>
+                        <button className="bg-white text-light-blue text-center font-medium py-4 px-6 rounded-xl lg:block hidden">Get Started Now!</button>
+                    </div>
                 </div>
             </div>
-        </section>
-    )
-}
+        </section >
+    );
+};
 
-export default HeroSection
+export default HeroSection;
