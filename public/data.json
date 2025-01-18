@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "image": "/assets/case1.jpg",
+        "title": "How CredentOne Elevated Their Online Presence with Our WordPress Maintenance Services",
+        "tags": [
+            "Business Consultancy",
+            "Financial Services",
+            "Legacy Planning"
+        ]
+    },
+    {
+        "id": 2,
+        "image": "/assets/case2.jpg",
+        "title": "How WordPress Expertise Helped Alldaygenericmeds Lead the Online Pharmacy Market",
+        "tags": [
+            "Health & Wellness",
+            "E-commerce",
+            "Online Pharmacy"
+        ]
+    },
+    {
+        "id": 3,
+        "image": "/assets/ship.jpg",
+        "title": "Ramdoot Exports Achieves Growth with Our WordPress Maintenance Expertise",
+        "tags": [
+            "Industrial Manufacturing",
+            "B2B Industrial Supply",
+            "Infrastructure Support"
+        ]
+    },
+    {
+        "id": 4,
+        "image": "/assets/career.jpg",
+        "title": "Driving AskTraining’s Online Success with Pro WordPress Maintenance",
+        "tags": [
+            "IT Training",
+            "E-commerce",
+            "Digital Marketing"
+        ]
+    },
+    {
+        "id": 5,
+        "image": "/assets/coronaria.jpg",
+        "title": "Enhancing Coronaria’s Online Healthcare Platform with Tailored WordPress Maintenance Care",
+        "tags": [
+            "Healthcare Services",
+            "Medical Equipment & Supplies",
+            "Elderly Care Services"
+        ]
+    }
+]
