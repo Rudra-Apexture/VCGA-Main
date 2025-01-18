@@ -1,84 +1,74 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import logo from "../assets/images/logo.png";
 import { IoMdMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
-import { Link } from 'react-router-dom'; // Changed to react-router-dom
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navRef = useRef(null);
-    const [isSticky, setIsSticky] = useState(false);
+    const location = useLocation();
     const isHomePage = location.pathname === "/";
-    const [isTransitioning, setIsTransitioning] = useState(false); // Added state for transition
+    const [isSticky, setIsSticky] = useState(false);
+    const [isTransitioning, setIsTransitioning] = useState(false);
 
 
-    const toggleMenu = () => {
-        setIsTransitioning(true); // Start transitioning
-        setIsMenuOpen(!isMenuOpen);
-    };
+    // Using useCallback for memoizing the toggle function
+    const toggleMenu = useCallback(() => {
+        setIsTransitioning(true);
+        setIsMenuOpen(prev => !prev);
+    }, []);
 
-    const handleClickOutside = (event) => {
+    // Using useCallback for memoizing the outside click handler
+    const handleClickOutside = useCallback((event) => {
         if (navRef.current && !navRef.current.contains(event.target) && isMenuOpen) {
             setIsTransitioning(true);
             setIsMenuOpen(false);
         }
-    };
+    }, [isMenuOpen]);
+
+    // Using useCallback for memoizing the scroll handler
+    const handleScroll = useCallback(() => {
+        setIsSticky(window.scrollY > (isHomePage ? 300 : 100));
+    }, [isHomePage]);
+
 
     useEffect(() => {
+        let timerId;
         if (!isMenuOpen) {
-            setTimeout(() => {
+            timerId = setTimeout(() => {
                 setIsTransitioning(false);
             }, 300);
         }
-    }, [isMenuOpen])
+        return () => clearTimeout(timerId);
+    }, [isMenuOpen]);
+
+
 
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [handleClickOutside]);
+
+
+    useEffect(() => {
+        document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        return () => { document.body.style.overflow = ''; };
     }, [isMenuOpen]);
 
 
     useEffect(() => {
-        // Toggle overflow:hidden on body when the menu is open
-        if (isMenuOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = ''; // Reset to default
-        }
-
-        return () => {
-            document.body.style.overflow = ''; // Cleanup on unmount
-        };
-    }, [isMenuOpen]);
-
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsSticky(window.scrollY > 300);
-        };
         window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [handleScroll]);
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsSticky(window.scrollY > 100);
-        };
-        window.addEventListener("scroll", handleScroll);
+    // Memoizing active link check
+    const isActive = useCallback((path) => location.pathname === path, [location.pathname]);
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
 
     return (
         <>
-            {/* Overlay for the blur effect */}
             {isMenuOpen && <div className="fixed inset-0 bg-black bg-opacity-20 backdrop-blur-sm z-0"></div>}
 
             <header
@@ -88,14 +78,12 @@ const Header = () => {
                     }  ${isSticky ? `sticky` : ""}`}
             >
                 <div className="container mx-auto flex justify-between items-center">
-                    {/* <!-- Logo (Left Side) --> */}
                     <div className="flex items-center">
                         <Link to="/">
                             <img src={logo} alt="VCGA Logo" className="md:h-11 h-8 mr-2" />
                         </Link>
                     </div>
 
-                    {/* <!-- Mobile Menu Icon --> */}
                     <div className="lg:hidden">
                         {!isMenuOpen ? (
                             <IoMdMenu className='h-6 w-6 cursor-pointer' onClick={toggleMenu} />
@@ -104,19 +92,15 @@ const Header = () => {
                         )}
                     </div>
 
-                    {/* <!-- Navigation (Desktop) --> */}
                     <nav className="hidden lg:flex space-x-8 items-center z-10">
-                        <Link to="/services" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Services</Link>
-                        <Link to="/case-studies" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Case Studies</Link>
+                        <Link to="/services" className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200 ${isActive('/services') ? 'text-blues' : ''}`}>Services</Link>
+                        <Link to="/case-studies" className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200 ${isActive('/case-studies') ? 'text-blues' : ''}`}>Case Studies</Link>
                         <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Blog</a>
-                        <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Reviews</a>
+                        <Link to="/reviews" className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200 ${isActive('/reviews') ? 'text-blues' : ''}`}>Reviews</Link>
                         <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">About Us</a>
                         <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Contact Us</a>
-
                         <a href="#" className="bg-light-blue text-white px-6 py-2.5 rounded-xl font-medium text-medium hover:bg-blue-900 transition-colors duration-200">See Plans</a>
                     </nav>
-
-                    {/* <!-- Navigation (Mobile) --> */}
 
                     <nav
                         ref={navRef}
@@ -128,21 +112,18 @@ const Header = () => {
                         `}
                     >
 
-                        {/* Mobile Nav Close */}
                         {isMenuOpen && (
                             <div className="lg:hidden flex justify-end mb-4">
                                 <IoClose className="h-8 w-8 cursor-pointer border p-1 rounded-full" onClick={toggleMenu} />
                             </div>
                         )}
 
-                        <Link to="/services" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Services</Link>
-                        <Link to="/case-studies" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Case Studies</Link>
+                        <Link to="/services" className={`text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0 ${isActive('/services') ? 'text-blues' : ''}`}>Services</Link>
+                        <Link to="/case-studies" className={`text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0 ${isActive('/case-studies') ? 'text-blues' : ''}`}>Case Studies</Link>
                         <a href="#" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Blog</a>
-                        <a href="#" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Reviews</a>
+                        <Link to="/reviews" className={`text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0 ${isActive('/reviews') ? 'text-blues' : ''}`}>Reviews</Link>
                         <a href="#" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">About Us</a>
                         <a href="#" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Contact Us</a>
-
-                        {/* <!-- Button --> */}
                         <a href="#" className="bg-light-blue bottom-2 w-4/5 text-center left-6 absolute inline-block text-white px-6 py-2.5 rounded-xl font-medium text-medium hover:bg-blue-900 transition-colors duration-200 lg:ml-0">See Plans</a>
                     </nav>
 
@@ -150,6 +131,6 @@ const Header = () => {
             </header>
         </>
     );
-}
+};
 
 export default Header;

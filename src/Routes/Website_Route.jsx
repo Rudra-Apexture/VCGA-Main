@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "../Pages/HomePage";
 import Services_Home from '../Pages/Services/Services_Home';
 import Case_Home from '../Pages/CaseStudies/Case_Home';
-import CaseBlog from '../Pages/CaseStudies';
+import Review_Home from '../Pages/Reviews/Review_Home';
 
 const Website_Route = () => {
     return (
@@ -16,6 +16,7 @@ const Website_Route = () => {
                     <Route exact path="/" element={<HomePage />} />
                     <Route exact path="/services" element={<Services_Home />} />
                     <Route exact path="/case-studies" element={<Case_Home />} />
+                    <Route exact path="/reviews" element={<Review_Home />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>
