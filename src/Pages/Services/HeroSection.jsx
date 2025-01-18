@@ -5,8 +5,8 @@ const HeroSection = () => {
         <section className='services-hero'>
             <div className="bg-light-blue lg:py-20 py-16 text-white">
                 <div className="max-w-5xl mx-auto md:space-y-8 space-y-4 px-4">
-                    <h2 className="lg:text-basic text-base font-bold mb-2 text-center">Services</h2>
-                    <h1 className="lg:text-[55px] md:text-4xl text-xlarge leading-[55px] font-bold text-white text-center">
+                    <h2 className="lg:text-basic text-base font-bold text-center">Services</h2>
+                    <h1 className="lg:text-[55px] md:text-4xl text-xlarge leading-[56px] font-bold text-white text-center">
                         WordPress {' '}
                         <span className="bg-gradient-2 rounded-full pt-2 font-bold">
                             Maintenance Service

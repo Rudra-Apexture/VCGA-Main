@@ -33,10 +33,10 @@ const YourChoice = () => {
     ];
 
     return (
-        <section className="bg-[#f6f6fc] py-12">
+        <section className="bg-[#f6f6fc]">
             <div className="container mx-auto">
                 <div className='flex justify-center items-center'>
-                    <h1 className='md:text-xlarge text-basic text-center font-bold text-primary mb-16 max-w-[650px]'>Why We’re the Right Choice For Your <span className='bg-gradient rounded-full text-[#1D49C3] pt-2 font-bold '>WordPress Maintenance?</span> </h1>
+                    <h1 className='md:text-xlarge text-basic text-center font-bold text-primary mb-12 max-w-[650px]'>Why We’re the Right Choice For Your <span className='bg-gradient rounded-full text-[#1D49C3] pt-2 font-bold '>WordPress Maintenance?</span> </h1>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 cursor-pointer">

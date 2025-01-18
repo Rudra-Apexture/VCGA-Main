@@ -10,7 +10,7 @@ const MainHeroSection = () => {
 
                 {/* <!-- Left Content --> */}
                 <div className="lg:w-1/2 w-full my-5 lg:mb-0 space-y-7">
-                    <h1 className="md:text-3xl text-large lg:text-5xl font-bold text-[#1B1D22] leading-tight md:leading-snug lg:leading-[55px]">
+                    <h1 className="md:text-3xl text-basic lg:text-5xl font-bold text-[#1B1D22] leading-tight md:leading-snug lg:leading-[55px]">
                         Secure Your WordPress Site and Watch Your <span className='bg-gradient rounded-full text-[#1D49C3] px-2  font-semibold'>Business</span> Growing.–Effortless.
                     </h1>
                     <p className="text-[#213343] font-medium text-lg max-w-[500px]">Say goodbye to WordPress headaches! Our low-cost

@@ -51,22 +51,22 @@ const FAQ = () => {
     return (
         <section className="FAQ-List">
             <div className="container mx-auto">
-                <h1 className="md:text-xlarge text-basic font-bold text-primary text-center pb-10">
+                <h1 className="md:text-xlarge text-basic font-bold text-primary text-center pb-12">
                     Frequently Asked{' '}
                     <span className="bg-gradient rounded-full text-[#1D49C3] pt-2 font-bold">
                         Questions
                     </span>{' '}
                 </h1>
-                <div className="mt-10 space-y-4">
+                <div className="space-y-4">
                     {faqs.map((faq, index) => (
                         <div key={index} className="space-y-4">
                             <button
                                 onClick={() => toggleFAQ(index)}
-                                className={`flex justify-between items-center w-full border-b border-[#E4E6EC] pb-3.5 ${openIndex === index ? "" : "bg-white"
+                                className={`flex justify-between items-center w-full border-b border-[#E4E6EC] pb-4 ${openIndex === index ? "" : "bg-white"
                                     }`}
                             >
                                 {/* Question */}
-                                <h2 className="font-medium lg:text-base text-medium text-start text-primary">
+                                <h2 className="font-medium md:text-base text-small text-start text-primary">
                                     {faq.question}
                                 </h2>
 
