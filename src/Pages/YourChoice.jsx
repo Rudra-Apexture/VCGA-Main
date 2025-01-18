@@ -38,6 +38,7 @@ const YourChoice = () => {
                 <div className='flex justify-center items-center'>
                     <h1 className='md:text-xlarge text-basic text-center font-bold text-primary mb-16 max-w-[650px]'>Why We’re the Right Choice For Your <span className='bg-gradient rounded-full text-[#1D49C3] pt-2 font-bold '>WordPress Maintenance?</span> </h1>
                 </div>
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 cursor-pointer">
                     {data.map(item => (
                         <div key={item.id} className="bg-white hover:bg-[#E2EBFF] transition-all ease-in duration-300 p-4 rounded-medium flex flex-col space-y-4 shadow-main">

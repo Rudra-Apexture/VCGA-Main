@@ -1,7 +1,10 @@
-import React from 'react';
-import { IoCheckmarkDoneSharp } from "react-icons/io5";
+import React from 'react'
+import HighlightedHeading from '../../components/HighlightedHeading'
+import { IoCheckmarkDoneSharp } from 'react-icons/io5';
+import mark from "../../assets/images/mark.svg";
 
-const Pricing = () => {
+const Plan = () => {
+
     const data = [
         {
             id: 1,
@@ -16,6 +19,12 @@ const Pricing = () => {
                 "Speed & Performance Optimization",
                 "Version Control",
                 "Activity Log",
+                "Database Management",
+                "Image Optimization",
+                "Keyword Tracking",
+                "Monthly Maintenance Report",
+                "Unlimited 24/7 Email Support",
+                "Basic Security Monitoring, 24/7 real-time monitoring with firewall protection"
             ],
         },
         {
@@ -23,7 +32,7 @@ const Pricing = () => {
             name: "SiteGuard Proactive",
             price: "$89",
             tag: "Gold",
-            isMostPopular: true, // Added this flag
+            isMostPopular: true,
             features: [
                 "High Speed SiteGround hosting free",
                 "All Silver Plan Features",
@@ -32,7 +41,8 @@ const Pricing = () => {
                 "WooCommerce Optimization",
                 "Cart Abandonment Solutions",
                 "Bi-Weekly Detailed Reports",
-                "Add Customize Services +$99",
+                "Unlimited 24/7 Email & Chat Priority Support",
+                "Advanced (Firewall, Complete Malware Scan & Removal )"
             ],
         },
         {
@@ -50,6 +60,10 @@ const Pricing = () => {
                 "Google Analytics Integration",
                 "Secure Payment Gateway Integration",
                 "Performance and Speed Optimization",
+                "White-Label Options for Agency",
+                "Weekly Comprehensive Reports",
+                "Unlimited 24/7 Email, Call & Chat Emergency Support",
+                "24/7 real-time security monitoring",
             ],
         },
     ];
@@ -67,12 +81,19 @@ const Pricing = () => {
         }
     };
 
+
     return (
-        <section className="bg-white py-12">
-            <div className="container mx-auto">
-                <h1 className='md:text-xlarge text-basic text-center font-bold text-primary mb-16'> Flexible Pricing for <span className='bg-gradient rounded-full text-[#1D49C3] pt-2 font-bold '>Your Growth
-                </span> </h1>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:gap-6 gap-4 ">
+        <section className='Maintenance-Plan pt-12'>
+            <div className='container mx-auto'>
+                <div className='text-center space-y-3.5'>
+                    <HighlightedHeading
+                        mainText="WordPress Maintenance "
+                        highlightedText="Packages & Plans"
+                        center={true}
+                    />
+                    <p className='text-primary font-medium text-small md:pb-20 pb-10'>Choose a plan and take the frustration out of running a site.</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:gap-6 gap-4">
                     {data.map(item => (
                         <div key={item.id} className="bg-white rounded-medium shadow-main border border-gray-300 p-6 flex flex-col space-y-4 relative">
                             <div className={`rounded-md inline-block w-24 text-center p-1.5 text-small font-bold`} style={getTagStyle(item.tag)}>{item.tag}</div>
@@ -90,13 +111,13 @@ const Pricing = () => {
                                 </div>
                             )}
                             <button className="bg-light-blue text-white py-3.5 rounded-md
-                             border border-[#103498] text-medium inline-block text-center font-medium hover:bg-[#103498] transition-colors duration-200">View Full Plans</button>
+                                             border border-[#103498] text-medium inline-block text-center font-medium hover:bg-[#103498] transition-colors duration-200">View Full Plans</button>
                             <ul className="list-inside list-none space-y-2">
                                 {/* Lists Items */}
                                 {item.features.map((feature, index) => (
                                     <li key={index} className="flex items-center mt-2">
                                         <IoCheckmarkDoneSharp className='size-5 text-light-blue mr-2' />
-                                        <span className={`text-small text-primary font-medium leading-7 ${index === 0 ? 'font-extrabold' : ''}`}>
+                                        <span className={`text-small text-primary font-medium leading-7 max-w-64 ${index === 0 ? 'font-bold text-primary' : ''}`}>
                                             {feature}
                                         </span>
                                     </li>
@@ -105,9 +126,24 @@ const Pricing = () => {
                         </div>
                     ))}
                 </div>
+                <div className='mt-12 space-y-4'>
+                    <div className="bg-[#F3FFF3] border border-[#048504] md:gap-4 rounded-full md:p-5 p-2 flex items-center justify-center space-x-2">
+                        <img src={mark} alt="main-mark" className='h-8' />
+                        <p className="text-primary md:text-center text-start md:text-small text-xs font-medium">
+                            Every support plans we offer is covered by
+                            <span className="font-bold"> hassle-free money-back guarantee.</span>
+                        </p>
+                    </div>
+
+                    <p className="text-center text-light-blue md:text-small text-xs font-medium mt-3">
+                        Not sure which plan is right for you? Check out our
+                        in-depth feature comparison
+                        or Contact Us
+                    </p>
+                </div>
             </div>
         </section>
-    );
+    )
 }
 
-export default Pricing;
+export default Plan

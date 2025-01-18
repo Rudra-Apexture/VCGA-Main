@@ -21,14 +21,14 @@ const Footer = () => {
                 </div>
 
                 <div className="flex flex-col items-center md:flex-row text-primary font-semibold">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div className="mb-8 md:mb-0 space-y-5">
                             <div className="mb-4">
-                                <img src={logo} alt="VCGA Logo" className="h-10" />
+                                <img src={logo} alt="VCGA Logo" className="lg:h-10 h-8" />
                             </div>
-                            <p className="mb-2 max-w-80 text-primary font-normal text-medium">We've got backups, updates, and security covered, with free SiteGround hosting included.</p>
-                            <p className="text-medium font-normal text-primary mb-2">info@vcga.com</p>
-                            <p className="text-medium text-primary font-normal">323-456-986</p>
+                            <p className="mb-2 max-w-80 text-primary font-normal text-small">We've got backups, updates, and security covered, with free SiteGround hosting included.</p>
+                            <p className="text-small font-normal text-primary mb-2">info@vcga.com</p>
+                            <p className="text-small text-primary font-normal">323-456-986</p>
                         </div>
 
 
@@ -72,12 +72,12 @@ const Footer = () => {
 
                     <p className="text-sm mb-4 md:mb-0 text-primary">© 2024 VCGA. All right reserved</p>
 
-                    <div className="flex space-x-5 text-[#5E6671]">
-                        <a href="#" className=""><i className="fa-brands fa-instagram"></i></a>
-                        <a href="#" className=""><i className="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" className=""><i className="fa-brands fa-twitter"></i></a>
-                        <a href="#" className=""><i className="fa-regula  fa-envelope"></i></a>
-                        <a href="#" className=""><i className="fa-brands fa-youtube"></i></a>
+                    <div className="flex space-x-5 text-[#5E6671] transition-all ease-in duration-200">
+                        <a href="#" className="hover:text-light-blue"><i className="fa-brands fa-instagram"></i></a>
+                        <a href="#" className="hover:text-light-blue"><i className="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" className="hover:text-light-blue"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#" className="hover:text-light-blue"><i className="fa-brands fa-twitter"></i></a>
+                        <a href="#" className="hover:text-light-blue"><i className="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
