@@ -10,7 +10,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-white py-12">
+        <footer className="bg-white py-10">
             <div className="mx-auto container">
 
                 <div className="border-b border-gray-300/50 mb-8 flex items-center justify-center relative">
@@ -75,7 +75,7 @@ const Footer = () => {
                     <div className="flex space-x-5 text-[#5E6671] transition-all ease-in duration-200">
                         <a href="#" className="hover:text-light-blue"><i className="fa-brands fa-instagram"></i></a>
                         <a href="#" className="hover:text-light-blue"><i className="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" className="hover:text-light-blue"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#" className="hover:text-light-blue"><i className="fa-solid fa-envelope"></i></a>
                         <a href="#" className="hover:text-light-blue"><i className="fa-brands fa-twitter"></i></a>
                         <a href="#" className="hover:text-light-blue"><i className="fa-brands fa-youtube"></i></a>
                     </div>

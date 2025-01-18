@@ -92,7 +92,7 @@ const Satisfaction = () => {
                         Explore All Reviews
                     </button>
                 </div>
-                <div className="relative py-12 p-10 bg-[#f6f6fc]">
+                <div className="relative p-10 bg-[#f6f6fc]">
                     <button
                         onClick={handlePrev}
                         className="absolute md:-left-1 left-2 top-1/2 transform -translate-y-1/2 z-20 p-1.5 bg-light-blue rounded-full focus:outline-none"
