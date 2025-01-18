@@ -63,8 +63,11 @@ const Header = () => {
     }, [handleScroll]);
 
 
-    // Memoizing active link check
-    const isActive = useCallback((path) => location.pathname === path, [location.pathname]);
+    const isActive = useCallback((path) => {
+        const currentPath = location.pathname.replace(/\/$/, ""); // Remove trailing slash
+        const targetPath = path.replace(/\/$/, ""); // Remove trailing slash from target
+        return currentPath === targetPath; // Exact match for active links
+    }, [location.pathname]);
 
 
     return (
@@ -93,14 +96,48 @@ const Header = () => {
                     </div>
 
                     <nav className="hidden lg:flex space-x-8 items-center z-10">
-                        <Link to="/services" className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200 ${isActive('/services') ? 'text-blues' : ''}`}>Services</Link>
-                        <Link to="/case-studies" className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200 ${isActive('/case-studies') ? 'text-blues' : ''}`}>Case Studies</Link>
-                        <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Blog</a>
-                        <Link to="/reviews" className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200 ${isActive('/reviews') ? 'text-blues' : ''}`}>Reviews</Link>
-                        <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">About Us</a>
-                        <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Contact Us</a>
-                        <a href="#" className="bg-light-blue text-white px-6 py-2.5 rounded-xl font-medium text-medium hover:bg-blue-900 transition-colors duration-200">See Plans</a>
+                        <Link
+                            to="/services"
+                            className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200 ${isActive('/services') ? 'text-blues' : ''
+                                }`}
+                        >
+                            Services
+                        </Link>
+                        <Link
+                            to="/case-studies"
+                            className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200 ${isActive('/case-studies') ? 'text-blues' : ''
+                                }`}
+                        >
+                            Case Studies
+                        </Link>
+                        <Link
+                            to="/reviews"
+                            className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200 ${isActive('/reviews') ? 'text-blues' : ''
+                                }`}
+                        >
+                            Reviews
+                        </Link>
+                        <Link
+                            to="/about-us"
+                            className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200 ${isActive('/about-us') ? 'text-blues' : ''
+                                }`}
+                        >
+                            About Us
+                        </Link>
+                        <Link
+                            to="/contact-us"
+                            className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200`}
+                        >
+                            Contact Us
+                        </Link>
+                        <a
+                            href="#"
+                            className="bg-light-blue text-white px-6 py-2.5 rounded-xl font-medium text-medium hover:bg-blue-900 transition-colors duration-200"
+                        >
+                            See Plans
+                        </a>
                     </nav>
+
 
                     <nav
                         ref={navRef}
@@ -122,13 +159,13 @@ const Header = () => {
                         <Link to="/case-studies" className={`text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0 ${isActive('/case-studies') ? 'text-blues' : ''}`}>Case Studies</Link>
                         <a href="#" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Blog</a>
                         <Link to="/reviews" className={`text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0 ${isActive('/reviews') ? 'text-blues' : ''}`}>Reviews</Link>
-                        <a href="#" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">About Us</a>
+                        <Link to="/about-us" className={`text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0 ${isActive('/about-us') ? 'text-blues' : ''}`}>About Us</Link>
                         <a href="#" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Contact Us</a>
                         <a href="#" className="bg-light-blue bottom-2 w-4/5 text-center left-6 absolute inline-block text-white px-6 py-2.5 rounded-xl font-medium text-medium hover:bg-blue-900 transition-colors duration-200 lg:ml-0">See Plans</a>
                     </nav>
 
                 </div>
-            </header>
+            </header >
         </>
     );
 };

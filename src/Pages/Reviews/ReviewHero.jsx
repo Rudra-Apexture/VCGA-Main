@@ -3,7 +3,7 @@ import React from 'react';
 const ReviewHero = () => {
   return (
     <section className='Reviews-hero'>
-      <div className="bg-light-blue lg:py-20 py-12 text-white">
+      <div className="bg-light-blue lg:py-24 py-12 text-white">
         <div className="max-w-7xl mx-auto md:space-y-10 space-y-8 px-4">
           <h1 className="lg:text-[55px] md:text-4xl text-large leading-[50px] text-center  font-bold text-white">
             Hear From Those Who've {' '}
