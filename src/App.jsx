@@ -1,5 +1,5 @@
 import React from 'react'
-import Website_Route from './Pages/Website_Route'
+import Website_Route from './Routes/Website_Route';
 
 const App = () => {
   return (

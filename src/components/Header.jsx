@@ -107,7 +107,7 @@ const Header = () => {
                     {/* <!-- Navigation (Desktop) --> */}
                     <nav className="hidden lg:flex space-x-8 items-center z-10">
                         <Link to="/services" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Services</Link>
-                        <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Case Studies</a>
+                        <Link to="/case-studies" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Case Studies</Link>
                         <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Blog</a>
                         <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">Reviews</a>
                         <a href="#" className="text-primary font-medium text-small  hover:text-blues transition-colors duration-200">About Us</a>
@@ -136,7 +136,7 @@ const Header = () => {
                         )}
 
                         <Link to="/services" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Services</Link>
-                        <a href="#" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Case Studies</a>
+                        <Link to="/case-studies" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Case Studies</Link>
                         <a href="#" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Blog</a>
                         <a href="#" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Reviews</a>
                         <a href="#" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">About Us</a>
