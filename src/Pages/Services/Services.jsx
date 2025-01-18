@@ -1,10 +1,10 @@
 import React from 'react'
-import setting1 from "../../assets/images/setting1.svg";
-import setting2 from "../../assets/images/setting2.svg";
-import setting3 from "../../assets/images/setting3.svg";
-import setting4 from "../../assets/images/setting4.svg";
-import setting5 from "../../assets/images/setting5.svg";
-import setting6 from "../../assets/images/setting6.svg";
+import setting1 from "../../assets/images/first.svg"
+import setting2 from "../../assets/images/second.svg"
+import setting3 from "../../assets/images/third.svg"
+import setting4 from "../../assets/images/four.svg"
+import setting5 from "../../assets/images/five.svg"
+import setting6 from "../../assets/images/six.svg"
 
 const Services = () => {
 
