@@ -7,6 +7,8 @@ import Services_Home from '../Pages/Services/Services_Home';
 import Case_Home from '../Pages/CaseStudies/Case_Home';
 import Review_Home from '../Pages/Reviews/Review_Home';
 import About_Home from '../Pages/AboutUs/About_Home';
+import Privacy from '../Pages/PrivacyPolicy';
+import TermService from '../Pages/TermService.jsx';
 
 const Website_Route = () => {
     return (
@@ -19,6 +21,8 @@ const Website_Route = () => {
                     <Route exact path="/case-studies" element={<Case_Home />} />
                     <Route exact path="/reviews" element={<Review_Home />} />
                     <Route exact path="/about-us" element={<About_Home />} />
+                    <Route exact path="/privacy-policy" element={<Privacy />} />
+                    <Route exact path="/term-service" element={<TermService />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>

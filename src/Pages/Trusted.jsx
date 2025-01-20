@@ -25,10 +25,11 @@ const Trusted = () => {
         <section className="bg-white lg:py-12">
             <div className="container mx-auto">
                 <HighlightedHeading
-                    mainText="Your Trusted Partner in  "
+                    mainText="Your Trusted Partner in "
                     highlightedText="WordPress Care"
                     center={true}
                 />
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12">
                     {data.map(item => (
                         <div key={item.id} className="flex flex-col items-center justify-center space-y-5">

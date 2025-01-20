@@ -12,6 +12,7 @@ import James from "../assets/images/James-Collins-1.jpg";
 import Raju from "../assets/images/raju.jpg";
 import { FaStar } from "react-icons/fa6";
 import google from "../assets/images/google.svg";
+import HighlightedHeading from '../components/HighlightedHeading';
 
 
 const Satisfaction = () => {
@@ -82,29 +83,28 @@ const Satisfaction = () => {
         <section className="Satisfaction-Card">
             <div className="container mx-auto">
                 <div className="flex items-center md:justify-between justify-center">
-                    <h1 className="md:text-xlarge text-basic font-bold text-primary">
-                        Voices of{' '}
-                        <span className="bg-gradient rounded-full text-[#1D49C3] pt-2 font-bold ">
-                            Satisfaction
-                        </span>{' '}
-                    </h1>
+                    <HighlightedHeading
+                        mainText="Voices of"
+                        highlightedText="Satisfaction "
+                        center={false}
+                    />
                     <button className="px-8 py-3.5 bg-light-blue text-white font-bold text-medium rounded-md hidden md:block">
                         Explore All Reviews
                     </button>
                 </div>
-                <div className="relative p-10 bg-[#f6f6fc]">
+                <div className="relative p-10">
                     <button
                         onClick={handlePrev}
                         className="absolute md:-left-1 left-2 top-1/2 transform -translate-y-1/2 z-20 p-1.5 bg-light-blue rounded-full focus:outline-none"
                     >
-                        <FaArrowLeftLong className="md:size-6 size-4 text-white " />
+                        <FaArrowLeftLong className="size-4 text-white " />
                     </button>
 
                     <button
                         onClick={handleNext}
-                        className="absolute  md:-right-1 right-2 top-1/2 transform -translate-y-1/2 z-20 p-1.5 bg-light-blue rounded-full focus:outline-none"
+                        className="absolute md:-right-1 right-2 top-1/2 transform -translate-y-1/2 z-20 p-1.5 bg-light-blue rounded-full focus:outline-none"
                     >
-                        <FaArrowRightLong className="md:size-6 size-4 text-white " />
+                        <FaArrowRightLong className="size-4 text-white" />
                     </button>
 
                     <Swiper

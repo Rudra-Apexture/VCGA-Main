@@ -35,15 +35,13 @@ const Care = () => {
     ];
 
     return (
-        <section className='py-12'>
+        <section className='Trusted-Care py-5'>
             <div className='container mx-auto'>
-                <h1 className="md:text-xlarge text-basic font-bold text-primary pb-10">
-                    Explore Our{' '}
-                    <span className="bg-gradient rounded-full text-[#1D49C3] pt-2 font-bold ">
-                        Case Studies
-                    </span>{' '}
-                </h1>
-                
+                <HighlightedHeading
+                    mainText="We've Got It "
+                    highlightedText="All Taken Care Of"
+                    center={false}
+                />
                 <div className="bg-white mt-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {data.map(item => (
