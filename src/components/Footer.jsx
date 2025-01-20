@@ -40,7 +40,7 @@ const Footer = () => {
                             <h4 className="font-semibold mb-4 text-[#5E6671]">Site Links</h4>
                             <ul className="space-y-4">
                                 <li><Link to="/about-us" className="hover:text-blue-600">About us</Link></li>
-                                <li><Link to="/" className="hover:text-blue-600">Contact us</Link></li>
+                                <li><Link to="/contact-us" className="hover:text-blue-600">Contact us</Link></li>
                                 <li><Link to="/privacy-policy" className="hover:text-blue-600">Privacy Policy</Link></li>
                                 <li><Link to="/term-service" className="hover:text-blue-600">Terms of Service</Link></li>
                             </ul>
