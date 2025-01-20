@@ -4,6 +4,8 @@ import AboutStory from './AboutStory'
 import LeadershipTeam from './LeadershipTeam'
 import Mission from './Mission'
 import Support from './Support'
+import Ourvalue from './Ourvalue'
+import Journey from './Journey';
 
 const About_Home = () => {
     return (
@@ -13,6 +15,8 @@ const About_Home = () => {
             <LeadershipTeam />
             <Mission />
             <Support />
+            <Ourvalue />
+            <Journey />
         </div>
     )
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from "../assets/images/logo.png";
+import { FaChevronUp } from "react-icons/fa";
+import { Link, Links } from 'react-router';
 
 const Footer = () => {
     const scrollToTop = () => {
@@ -13,11 +15,13 @@ const Footer = () => {
         <footer className="bg-white py-10">
             <div className="mx-auto container">
 
-                <div className="border-b border-gray-300/50 mb-8 flex items-center justify-center relative">
+                <div className="border-b border-gray-300/50 mb-20 flex items-center justify-center relative">
                     {/* top-Scroll */}
-                    <button onClick={scrollToTop} className="text-white bg-light-blue text-medium size-8 rounded-lg absolute -top-4 backdrop-blur-sm  border border-gray-300 ">
-                        <i className="fas fa-arrow-up align-middle text-medium  flex justify-center items-center"></i>
+                    <button onClick={scrollToTop} className="text-white text-medium px-1.5 py-4 rounded-xl absolute -top-6 backdrop-blur-sm  border border-gray-300 ">
+                        {/* <i className="fas fa-arrow-up "></i> */}
+                        <FaChevronUp className='text-black h-3.5' />
                     </button>
+                    <h1 className='absolute top-8 text-[#020D0AB2] font-medium uppercase text-xxs'>Back on top</h1>
                 </div>
 
                 <div className="flex flex-col items-center md:flex-row text-primary font-semibold">
@@ -35,10 +39,10 @@ const Footer = () => {
                         <div className="">
                             <h4 className="font-semibold mb-4 text-[#5E6671]">Site Links</h4>
                             <ul className="space-y-4">
-                                <li><a href="#" className="hover:text-blue-600">About us</a></li>
-                                <li><a href="#" className="hover:text-blue-600">Contact us</a></li>
-                                <li><a href="#" className="hover:text-blue-600">Privacy Policy</a></li>
-                                <li><a href="#" className="hover:text-blue-600">Terms of Service</a></li>
+                                <li><Link to="/about-us" className="hover:text-blue-600">About us</Link></li>
+                                <li><Link to="/" className="hover:text-blue-600">Contact us</Link></li>
+                                <li><Link to="/privacy-policy" className="hover:text-blue-600">Privacy Policy</Link></li>
+                                <li><Link to="/term-service" className="hover:text-blue-600">Terms of Service</Link></li>
                             </ul>
                         </div>
 

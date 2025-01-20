@@ -1,6 +1,5 @@
 import React from 'react'
 import hero from "../assets/images/Hero-section.png";
-import HighlightedHeading from '../components/HighlightedHeading'; // Adjust path
 
 
 const MainHeroSection = () => {
@@ -9,9 +8,9 @@ const MainHeroSection = () => {
             <div className="container mx-auto flex items-center justify-between">
 
                 {/* <!-- Left Content --> */}
-                <div className="lg:w-1/2 w-full my-5 lg:mb-0 space-y-7">
-                    <h1 className="md:text-3xl text-basic lg:text-5xl font-bold text-[#1B1D22] leading-tight md:leading-snug lg:leading-[55px]">
-                        Secure Your WordPress Site and Watch Your <span className='bg-gradient rounded-full text-[#1D49C3] px-2  font-semibold'>Business</span> Growing.–Effortless.
+                <div className="lg:w-1/2 w-full my-5 lg:mb-0 space-y-5">
+                    <h1 className="text-large lg:text-5xl font-bold text-[#1B1D22] leading-tight md:leading-snug lg:leading-[55px]">
+                        Secure Your WordPress Site and Watch Your <span className='bg-gradient rounded-full text-[#1D49C3] font-semibold'>Business</span> Growing.–Effortless.
                     </h1>
                     <p className="text-[#213343] font-medium text-lg max-w-[500px]">Say goodbye to WordPress headaches! Our low-cost
                         expert services keep your site secure, fast, and updated so
