@@ -160,7 +160,7 @@ const Header = () => {
                         <a href="#" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Blog</a>
                         <Link to="/reviews" className={`text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0 ${isActive('/reviews') ? 'text-blues' : ''}`}>Reviews</Link>
                         <Link to="/about-us" className={`text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0 ${isActive('/about-us') ? 'text-blues' : ''}`}>About Us</Link>
-                        <a href="#" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Contact Us</a>
+                        <Link to="/contact-us" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Contact Us</Link>
                         <a href="#" className="bg-light-blue bottom-2 w-4/5 text-center left-6 absolute inline-block text-white px-6 py-2.5 rounded-xl font-medium text-medium hover:bg-blue-900 transition-colors duration-200 lg:ml-0">See Plans</a>
                     </nav>
 

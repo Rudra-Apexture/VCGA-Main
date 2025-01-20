@@ -9,6 +9,7 @@ import Review_Home from '../Pages/Reviews/Review_Home';
 import About_Home from '../Pages/AboutUs/About_Home';
 import Privacy from '../Pages/PrivacyPolicy';
 import TermService from '../Pages/TermService.jsx';
+import Contact_Home from '../Pages/ContactUs/Contact_Home.jsx';
 
 const Website_Route = () => {
     return (
@@ -23,6 +24,7 @@ const Website_Route = () => {
                     <Route exact path="/about-us" element={<About_Home />} />
                     <Route exact path="/privacy-policy" element={<Privacy />} />
                     <Route exact path="/term-service" element={<TermService />} />
+                    <Route exact path="/contact-us" element={<Contact_Home />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>
