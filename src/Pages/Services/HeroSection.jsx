@@ -6,7 +6,6 @@ const HeroSection = () => {
         <div>
             {/* Hero Section for Services */}
             <Hero
-                title="Services"
                 mainHeading="WordPress "
                 mainHeadingHighlight="Maintenance Service"
                 description="Are you struggling to manage WordPress? Let us handle all the technical
