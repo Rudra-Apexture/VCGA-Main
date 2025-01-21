@@ -111,6 +111,13 @@ const Header = () => {
                             Case Studies
                         </Link>
                         <Link
+                            to="/blog"
+                            className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200 ${isActive('/case-studies') ? 'text-blues' : ''
+                                }`}
+                        >
+                            Blog
+                        </Link>
+                        <Link
                             to="/reviews"
                             className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200 ${isActive('/reviews') ? 'text-blues' : ''
                                 }`}
@@ -130,12 +137,13 @@ const Header = () => {
                         >
                             Contact Us
                         </Link>
-                        <a
-                            href="#"
-                            className="bg-light-blue text-white px-6 py-2.5 rounded-xl font-medium text-medium hover:bg-blue-900 transition-colors duration-200"
+                        {/* button */}
+                        <Link
+                            to="/see-pricing"
+                            className="bg-light-blue text-white px-8 py-2.5 rounded-md font-medium hover:bg-blue-900 transition-colors duration-200"
                         >
                             See Plans
-                        </a>
+                        </Link>
                     </nav>
 
 
@@ -157,7 +165,7 @@ const Header = () => {
 
                         <Link to="/services" className={`text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0 ${isActive('/services') ? 'text-blues' : ''}`}>Services</Link>
                         <Link to="/case-studies" className={`text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0 ${isActive('/case-studies') ? 'text-blues' : ''}`}>Case Studies</Link>
-                        <a href="#" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Blog</a>
+                        <Link to="/blog" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Blog</Link>
                         <Link to="/reviews" className={`text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0 ${isActive('/reviews') ? 'text-blues' : ''}`}>Reviews</Link>
                         <Link to="/about-us" className={`text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0 ${isActive('/about-us') ? 'text-blues' : ''}`}>About Us</Link>
                         <Link to="/contact-us" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Contact Us</Link>
