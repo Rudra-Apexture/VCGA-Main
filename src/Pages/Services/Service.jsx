@@ -1,15 +1,15 @@
 import React from 'react'
-import Hero_Section from '../Services/HeroSection'
+import ServicesMain from './ServicesMain'
 import Operate from './Operate'
 import Plan from './Plan'
 import Services from './Services'
 import ClientStory from './ClientStory'
 import Expert from './Expert'
 
-const Services_Home = () => {
+const Service = () => {
     return (
         <main>
-            <Hero_Section />
+            <ServicesMain />
             <Operate />
             <Plan />
             <Services />
@@ -19,4 +19,4 @@ const Services_Home = () => {
     )
 }
 
-export default Services_Home
+export default Service

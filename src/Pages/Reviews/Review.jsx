@@ -2,7 +2,7 @@ import React from 'react'
 import ReviewHero from './ReviewHero';
 import ReviewCard from './ReviewCard';
 
-const Review_Home = () => {
+const Review = () => {
     return (
         <div>
             <ReviewHero />
@@ -11,4 +11,4 @@ const Review_Home = () => {
     )
 }
 
-export default Review_Home
+export default Review

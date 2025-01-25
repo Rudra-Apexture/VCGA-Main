@@ -11,7 +11,9 @@ import Sarah from "../assets/images/Sarah-Mitchell-1.jpg";
 import James from "../assets/images/James-Collins-1.jpg";
 import Raju from "../assets/images/raju.jpg";
 import { FaStar } from "react-icons/fa6";
+import { FaRegStar } from "react-icons/fa"; // Import regular star
 import google from "../assets/images/google.svg";
+import HighlightedHeading from '../components/HighlightedHeading';
 
 
 const Satisfaction = () => {
@@ -53,7 +55,7 @@ const Satisfaction = () => {
         {
             id: 5,
             name: 'Emily Wilson',
-            rating: 5,
+            rating: 3,
             review:
                 'Absolutely loved my experience with [business/service name]! The staff was incredibly friendly and attentive, making me feel valued. The quality of the service/product exceeded my expectations. Everything was delivered....',
             image: Raju,
@@ -72,6 +74,20 @@ const Satisfaction = () => {
         }
     };
 
+
+    const renderStars = (rating) => {
+        const stars = [];
+        for (let i = 1; i <= 5; i++) {
+            if (i <= rating) {
+                stars.push(<FaStar key={i} className="text-yellow-300" />);
+            } else {
+                stars.push(<FaRegStar key={i} className="text-yellow-300" />); // Use empty star icon
+            }
+        }
+        return stars;
+    };
+
+
     useEffect(() => {
         if (swiperRef.current && swiperRef.current.swiper) {
             swiperRef.current.swiper.autoplay.start();
@@ -82,49 +98,47 @@ const Satisfaction = () => {
         <section className="Satisfaction-Card">
             <div className="container mx-auto">
                 <div className="flex items-center md:justify-between justify-center">
-                    <h1 className="md:text-xlarge text-basic font-bold text-primary">
-                        Voices of{' '}
-                        <span className="bg-gradient rounded-full text-[#1D49C3] pt-2 font-bold ">
-                            Satisfaction
-                        </span>{' '}
-                    </h1>
+                    <HighlightedHeading
+                        mainText="Voices of"
+                        highlightedText="Satisfaction "
+                        center={false}
+                    />
                     <button className="px-8 py-3.5 bg-light-blue text-white font-bold text-medium rounded-md hidden md:block">
                         Explore All Reviews
                     </button>
                 </div>
-                <div className="relative p-10 bg-[#f6f6fc]">
+                <div className="relative p-10">
                     <button
                         onClick={handlePrev}
-                        className="absolute md:-left-1 left-2 top-1/2 transform -translate-y-1/2 z-20 p-1.5 bg-light-blue rounded-full focus:outline-none"
+                        className="absolute md:-left-2 left-0 top-1/2 transform -translate-y-1/2 z-20 md:p-2.5 p-2 bg-light-blue rounded-full focus:outline-none"
                     >
-                        <FaArrowLeftLong className="md:size-6 size-4 text-white " />
+                        <FaArrowLeftLong className="md:size-5 text-white " />
                     </button>
 
                     <button
                         onClick={handleNext}
-                        className="absolute  md:-right-1 right-2 top-1/2 transform -translate-y-1/2 z-20 p-1.5 bg-light-blue rounded-full focus:outline-none"
+                        className="absolute md:-right-2 right-0 top-1/2 transform -translate-y-1/2 z-20 md:p-2.5 p-2 bg-light-blue rounded-full focus:outline-none"
                     >
-                        <FaArrowRightLong className="md:size-6 size-4 text-white " />
+                        <FaArrowRightLong className="md:size-5 text-white" />
                     </button>
 
                     <Swiper
                         ref={swiperRef}
                         slidesPerView={3}
-                        spaceBetween={20}
+                        spaceBetween={30}
                         modules={[Navigation, Autoplay]}
                         loop={true}
                         autoplay={{
                             delay: 2000,
                             disableOnInteraction: false,
                         }}
-                        speed={1000}
+                        speed={1500}
                         breakpoints={{
                             320: {
                                 slidesPerView: 1,
                             },
                             767: {
                                 slidesPerView: 2,
-                                spaceBetween: 20,
                             },
                             1024: {
                                 slidesPerView: 3,
@@ -146,11 +160,7 @@ const Satisfaction = () => {
                                                     {testimonial.name}
                                                 </h4>
                                                 <div className="flex">
-                                                    <FaStar className="text-yellow-300" />
-                                                    <FaStar className="text-yellow-300" />
-                                                    <FaStar className="text-yellow-300" />
-                                                    <FaStar className="text-yellow-300" />
-                                                    <FaStar className="text-yellow-300" />
+                                                    {renderStars(testimonial.rating)}
                                                 </div>
                                             </div>
                                         </div>

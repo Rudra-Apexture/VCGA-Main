@@ -3,7 +3,7 @@ import CaseStudyHome from './CaseStudyHome';
 import Caseblog from './CaseBlog';
 import CaseService from './CaseService';
 
-const Case_Home = () => {
+const Case = () => {
     return (
         <main>
             <CaseStudyHome />
@@ -13,4 +13,4 @@ const Case_Home = () => {
     )
 }
 
-export default Case_Home
+export default Case;

@@ -4,17 +4,21 @@ import AboutStory from './AboutStory'
 import LeadershipTeam from './LeadershipTeam'
 import Mission from './Mission'
 import Support from './Support'
+import Ourvalue from './Ourvalue'
+import Journey from './Journey'
 
-const About_Home = () => {
+const AboutUs = () => {
     return (
-        <div>
+        <main>
             <About_Hero />
             <AboutStory />
             <LeadershipTeam />
             <Mission />
             <Support />
-        </div>
+            <Ourvalue />
+            <Journey />
+        </main>
     )
 }
 
-export default About_Home
+export default AboutUs

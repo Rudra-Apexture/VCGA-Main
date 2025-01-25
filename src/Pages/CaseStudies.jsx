@@ -1,17 +1,20 @@
 import React from 'react'
 import case1 from "../assets/images/case1.jpg";
 import case2 from "../assets/images/case2.jpg";
+import HighlightedHeading from '../components/HighlightedHeading';
+import { Link } from 'react-router';
 
 const CaseStudies = () => {
   return (
-    <section className='Case-studies pb-12'>
+    <section className='Case-studies'>
       <div className='container mx-auto'>
-        <h1 className="md:text-xlarge text-basic font-bold text-primary pb-10">
-          Explore Our{' '}
-          <span className="bg-gradient rounded-full text-[#1D49C3] pt-2 font-bold ">
-            Case Studies
-          </span>{' '}
-        </h1>
+        <div className='mb-12'>
+          <HighlightedHeading
+            mainText="Explore Our "
+            highlightedText="Case Studies "
+            center={true}
+          />
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white rounded-lg ">
@@ -42,15 +45,15 @@ const CaseStudies = () => {
         </div>
 
 
-        <div className="mt-6">
-          <a href="#" className="inline-flex items-center text-light-blue gap-2 lg:text-basic text-base font-semibold">
+        <div className="pt-6 inline-flex gap-2 items-center relative cursor-pointer">
+          <Link to="case-studies" className="text-light-blue md:text-basic text-base font-semibold pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-light-blue after:transition-all after:duration-500 hover:after:w-full">
             See all case studies
-            <svg className="h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-          </a>
+          </Link>
+          <svg className="h-8 text-light-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
         </div>
 
       </div>
-    </section>
+    </section >
   )
 }
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { HiMinus, HiPlus } from "react-icons/hi";
+import HighlightedHeading from "../components/HighlightedHeading";
 
 
 const FAQ = () => {
@@ -49,24 +50,26 @@ const FAQ = () => {
     ];
 
     return (
-        <section className="FAQ-List">
+        <section className="FAQ-List py-12">
             <div className="container mx-auto">
-                <h1 className="md:text-xlarge text-basic font-bold text-primary text-center pb-12">
-                    Frequently Asked{' '}
-                    <span className="bg-gradient rounded-full text-[#1D49C3] pt-2 font-bold">
-                        Questions
-                    </span>{' '}
-                </h1>
+                <div className='mb-10'>
+                    <HighlightedHeading
+                        mainText="Frequently Asked"
+                        highlightedText="Questions "
+                        center={true}
+                    />
+                </div>
+
                 <div className="space-y-4">
                     {faqs.map((faq, index) => (
-                        <div key={index} className="space-y-4">
+                        <div key={index} className="">
                             <button
                                 onClick={() => toggleFAQ(index)}
-                                className={`flex justify-between items-center w-full border-b border-[#E4E6EC] pb-4 ${openIndex === index ? "" : "bg-white"
+                                className={`flex justify-between items-center w-full gap-2 border-b border-[#E4E6EC] pb-4 ${openIndex === index ? "" : "bg-white"
                                     }`}
                             >
                                 {/* Question */}
-                                <h2 className="font-medium md:text-base text-small text-start text-primary">
+                                <h2 className="font-medium md:text-base text-medium text-start text-primary">
                                     {faq.question}
                                 </h2>
 
@@ -88,10 +91,10 @@ const FAQ = () => {
 
                             {/* Answer */}
                             <div
-                                className={`overflow-hidden transition-[max-height] duration-700  ease-in-out ${openIndex === index ? "max-h-[150px]" : "max-h-0"
+                                className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${openIndex === index ? "max-h-[150px]" : "max-h-0"
                                     }`}
                             >
-                                <p className="font-normal text-primary text-small lg:text-medium mb-2">
+                                <p className="font-normal text-primary text-small lg:text-medium my-6">
                                     {faq.answer}
                                 </p>
                             </div>

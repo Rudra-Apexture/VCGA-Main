@@ -1,5 +1,7 @@
 import React from 'react';
-import { IoCheckmarkDoneSharp } from "react-icons/io5";
+import { GiCheckMark } from "react-icons/gi";
+import HighlightedHeading from "../components/HighlightedHeading";
+
 
 const Pricing = () => {
     const data = [
@@ -70,9 +72,17 @@ const Pricing = () => {
     return (
         <section className="bg-white py-12">
             <div className="container mx-auto">
-                <h1 className='md:text-xlarge text-basic text-center font-bold text-primary mb-16'> Flexible Pricing for <span className='bg-gradient rounded-full text-[#1D49C3] pt-2 font-bold '>Your Growth
-                </span> </h1>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:gap-6 gap-4 ">
+                {/* <h1 className='md:text-xlarge text-basic text-center font-bold text-primary mb-16'> Flexible Pricing for <span className='bg-gradient rounded-full text-[#1D49C3] pt-2 font-bold '>Your Growth
+                </span> </h1> */}
+                <div className='md:mb-24 mb-12'>
+                    <HighlightedHeading
+                        mainText="Flexible Pricing for"
+                        highlightedText="Your Growth "
+                        center={true}
+                    />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:gap-6 gap-4">
                     {data.map(item => (
                         <div key={item.id} className="bg-white rounded-medium shadow-main border border-gray-300 p-6 flex flex-col space-y-4 relative">
                             <div className={`rounded-md inline-block w-24 text-center p-1.5 text-small font-bold`} style={getTagStyle(item.tag)}>{item.tag}</div>
@@ -85,7 +95,7 @@ const Pricing = () => {
                                 <hr />
                             </div>
                             {item.isMostPopular && (
-                                <div className="absolute -top-[60px] -right-16 rounded-tl-medium rounded-tr-medium md:block hidden -translate-x-1/2 bg-light-blue text-white px-10 lg:px-20 py-2.5 text-center text-small font-medium">
+                                <div className="absolute -top-[60px] lg:-right-32 -right-16 rounded-tl-medium rounded-tr-medium md:block hidden -translate-x-1/2 bg-light-blue text-white px-10 lg:px-28 md:px-10 py-2.5 text-center text-small font-medium">
                                     Most Popular
                                 </div>
                             )}
@@ -95,8 +105,8 @@ const Pricing = () => {
                                 {/* Lists Items */}
                                 {item.features.map((feature, index) => (
                                     <li key={index} className="flex items-center mt-2">
-                                        <IoCheckmarkDoneSharp className='size-5 text-light-blue mr-2' />
-                                        <span className={`text-small text-primary font-medium leading-7 ${index === 0 ? 'font-extrabold' : ''}`}>
+                                        <GiCheckMark className='size-4 text-light-blue mr-2' />
+                                        <span className={`text-small text-primary font-medium leading-7 ${index === 0 ? 'font-bold' : ''}`}>
                                             {feature}
                                         </span>
                                     </li>

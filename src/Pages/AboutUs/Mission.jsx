@@ -13,7 +13,7 @@ const Mission = () => {
 
                     {/* Text Section */}
                     <div className="lg:w-1/2 flex flex-col justify-center order-1 md:order-2">
-                        <h1 className="md:text-xlarge text-large font-bold text-primary pb-4">
+                        <h1 className="md:text-xlarge text-large font-bold text-primary my-5">
                             Our {' '}
                             <span className="bg-gradient rounded-full text-[#1D49C3] font-bold ">
                                 Mission

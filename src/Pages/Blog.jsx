@@ -1,26 +1,25 @@
 import React from 'react'
-import image from "../assets/images/blogimage.png";
+import HighlightedHeading from '../components/HighlightedHeading'
+import BlogList from '../components/BlogList'
 
 const Blog = () => {
-  return (
-    <section className='blog-data py-12'>
-      <div className='container mx-auto'>
-        <div className="bg-light-blue rounded-medium lg:flex lg:flex-row lg:justify-between">
-          <div className="lg:w-1/2 w-full">
-            <div className="md:p-20 p-6 text-white md:text-start text-center">
-              <h2 className="md:text-4xl text-basic font-bold mb-6">Ready to Grow?</h2>
-              <p className="text-lg mb-6 md:max-w-96 w-full">Transform your WordPress website today- together, we can achieve greatness!</p>
-              <button className="bg-white text-light-blue font-semibold py-4 md:w-1/2 w-full mb-6 rounded-xl">Get Started Today</button>
+    return (
+        <section className='Blogs pb-12'>
+            <div className='container mx-auto'>
+                <div className="flex lg:flex-row flex-col items-center justify-between lg:space-y-0 space-y-5 pb-12">
+                    <HighlightedHeading
+                        mainText="Read our latest "
+                        highlightedText="Articles, Resources, And Guides "
+                        center={true}
+                    />
+                    <button className='bg-light-blue px-10 py-3 text-medium capitalize text-white hover:bg-blue-700 rounded-xl'>
+                        visit our blogs
+                    </button>
+                </div>
             </div>
-          </div>
-
-          <div className="flex flex-wrap lg:w-1/2 w-full">
-            <img src={image} alt="Website 1" className="object-cover md:-mt-10 mt-0" />
-          </div>
-        </div>
-      </div>
-    </section>
-  )
+            <BlogList />
+        </section>
+    )
 }
 
 export default Blog

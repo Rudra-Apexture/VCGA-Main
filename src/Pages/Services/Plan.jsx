@@ -2,6 +2,8 @@ import React from 'react'
 import HighlightedHeading from '../../components/HighlightedHeading'
 import { IoCheckmarkDoneSharp } from 'react-icons/io5';
 import mark from "../../assets/images/mark.svg";
+import { GiCheckMark } from "react-icons/gi";
+
 
 const Plan = () => {
 
@@ -116,7 +118,7 @@ const Plan = () => {
                                 {/* Lists Items */}
                                 {item.features.map((feature, index) => (
                                     <li key={index} className="flex items-center mt-2">
-                                        <IoCheckmarkDoneSharp className='size-5 text-light-blue mr-2' />
+                                        <GiCheckMark  className='size-4 text-light-blue mr-2' />
                                         <span className={`text-small text-primary font-medium leading-7 max-w-64 ${index === 0 ? 'font-bold text-primary' : ''}`}>
                                             {feature}
                                         </span>
