@@ -1,6 +1,6 @@
 import React from 'react'
 import Review from './Review'
-import Discription from './discription'
+import Discription from './Discription'
 
 const HostMain = () => {
     return (
