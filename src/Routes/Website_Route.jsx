@@ -17,6 +17,7 @@ const Contact = lazy(() => import('../Pages/ContactUs/Contact'));
 const Privacy = lazy(() => import('../Pages/PrivacyPolicy'));
 const TermService = lazy(() => import('../Pages/TermService'));
 const PlanPage = lazy(() => import('../../src/Pages/Plan/PlanPage'));
+const HostMain = lazy(() => import('../../src/Pages/HostAdvice/HostMain'));
 const Error404 = lazy(() => import('../../src/Pages/Error404'));
 
 
@@ -39,6 +40,7 @@ const Website_Route = () => {
                     <Route path="/term-service" element={<TermService />} />
                     <Route path="/contact-us" element={<Contact />} />
                     <Route path="/see-pricing" element={<PlanPage />} />
+                    <Route path="/hostadvice" element={<HostMain />} />
                     {/* Added Error404 route */}
                     <Route path="*" element={<Error404 />} />
 

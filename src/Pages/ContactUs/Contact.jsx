@@ -126,13 +126,13 @@ const Contact = () => {
                     </div>
 
                     {/* Right Side - Form-Field */}
-                    <div className="bg-white rounded-3xl md:p-10 p-4 lg:max-w-md">
+                    <div className="bg-white rounded-3xl md:p-10 p-4 lg:max-w-lg">
                         <h3 className="text-primary text-base font-bold mb-4">
                             Get in Touch with Our WordPress Experts
                         </h3>
                         <form onSubmit={handleSubmit} className="space-y-2 text-primary">
                             <div>
-                                <label htmlFor="name" className="block  font-medium">Name*</label>
+                                <label htmlFor="name" className="block font-medium">Name*</label>
                                 <input
                                     type="text"
                                     id="name"

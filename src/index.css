@@ -118,3 +118,38 @@ body {
     display: inline-block;
     padding-block-start: 2.25rem;
 }
+
+.props {
+    width: 24px;
+    height: 24px;
+    background: rgba(85, 185, 70, .7);
+    mask-image: url(./assets//images/face-smile.svg);
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+.data {
+    background: rgba(255, 77, 0, .7);
+}
+
+
+.custom-scroll::-webkit-scrollbar {
+    width: 6px;
+    /* Width of the scrollbar */
+    height: 6px;
+}
+
+/* Scrollbar track */
+.custom-scroll::-webkit-scrollbar-track {
+    background: #fdf4f4;
+    /* Track background */
+}
+
+/* Scrollbar thumb */
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: #E2E5EA;
+    /* Color of the thumb */
+}

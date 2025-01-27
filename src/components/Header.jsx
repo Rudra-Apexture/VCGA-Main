@@ -4,6 +4,7 @@ import { IoMdMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import { Link, useLocation } from 'react-router-dom';
 
+
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navRef = useRef(null);
@@ -97,7 +98,7 @@ const Header = () => {
                         )}
                     </div>
 
-                    <nav className="hidden lg:flex space-x-8 items-center z-10">
+                    <nav className="hidden lg:flex space-x-5 items-center z-10">
                         <Link
                             to="/services"
                             className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200 ${isActive('/services') ? 'text-blues' : ''}`}
@@ -139,6 +140,12 @@ const Header = () => {
                         >
                             Contact Us
                         </Link>
+                        <Link
+                            to="/hostadvice"
+                            className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200`}
+                        >
+                            Hostadvice
+                        </Link>
                         {/* button */}
                         <Link
                             to="/see-pricing"
@@ -171,6 +178,12 @@ const Header = () => {
                         <Link to="/reviews" className={`text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0 ${isActive('/reviews') ? 'text-blues' : ''}`}>Reviews</Link>
                         <Link to="/about-us" className={`text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0 ${isActive('/about-us') ? 'text-blues' : ''}`}>About Us</Link>
                         <Link to="/contact-us" className="text-primary font-medium text-medium hover:text-blues transition-colors duration-200 mb-4 lg:mb-0">Contact Us</Link>
+                        <Link
+                            to="/hostadvice"
+                            className={`text-primary font-medium text-small hover:text-blues transition-colors duration-200`}
+                        >
+                            Hostadvice
+                        </Link>
                         <a href="#" className="bg-light-blue bottom-2 w-4/5 text-center left-6 absolute inline-block text-white px-6 py-2.5 rounded-xl font-medium text-medium hover:bg-blue-900 transition-colors duration-200 lg:ml-0">See Plans</a>
                     </nav>
 

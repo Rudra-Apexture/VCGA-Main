@@ -6,6 +6,7 @@ import { FaTwitter, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
 import { FaFacebook } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
 import { slugify } from '../../../utils';
+import BlogReply from './BlogReply';
 
 const BlogDetail = () => {
     const { blogSlug } = useParams();
@@ -112,8 +113,8 @@ const BlogDetail = () => {
             </div>
             <div className="container mx-auto py-10">
                 <article className='my-12'>
-                    <div className="flex flex-col lg:flex-row items-start">
-                        <div className="flex flex-col w-full lg:w-1/4">
+                    <div className="flex flex-col lg:flex-row items-start border-b pb-10">
+                        <div className="flex flex-col w-full lg:w-1/4 ">
                             <div className="flex space-x-2 ">
                                 <h1 className="text-primary text-small font-medium flex items-center">Share</h1>
                                 {/* Facebook */}
@@ -185,7 +186,9 @@ const BlogDetail = () => {
                     </div>
 
                 </article>
-
+            </div>
+            <div className='blog-reply'>
+                <BlogReply />
             </div>
         </>
     );
