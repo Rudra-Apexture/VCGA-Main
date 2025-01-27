@@ -7,7 +7,7 @@ import { IoIosArrowUp } from "react-icons/io";
 import hostman from "../../assets/images/Hostman_logo.webp";
 import { GiCheckMark } from "react-icons/gi";
 import { FaArrowRight } from "react-icons/fa";
-import laptop from "../../assets/images/laptops.webp";
+import laptop from "../../assets/images/Laptops.webp";
 
 
 
