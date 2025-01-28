@@ -5,12 +5,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "../Pages/HomePage";
 import CaseDetails from '../Pages/CaseStudies/CaseDetails';
 import ScrollToTop from '../components/Scroll-to-Top';
+import Blogs from '../Pages/Blogs';
+import BlogDetails from '../Pages/BlogDetails';
 
 
 const Service = lazy(() => import('../Pages/Services/Service'));
 const Case = lazy(() => import('../Pages/CaseStudies/Case'));
-const Blog = lazy(() => import('../Pages/Blogs/Blog'));
-const BlogDetails = lazy(() => import('../Pages/Blogs/BlogDetails'));
+// const Blog = lazy(() => import('../Pages/Blogs/Blog'));
+// const BlogDetails = lazy(() => import('../Pages/Blogs/BlogDetails'));
 const Review = lazy(() => import('../Pages/Reviews/Review'));
 const AboutUs = lazy(() => import('../Pages/AboutUs/AboutUs'));
 const Contact = lazy(() => import('../Pages/ContactUs/Contact'));
@@ -30,8 +32,9 @@ const Website_Route = () => {
                 <Routes>
                     <Route exact path="/" element={<HomePage />} />
                     <Route path="/services" element={<Service />} />
-                    <Route path="/blog" element={<Blog />} />
-                    <Route path="/blog/:id" element={<BlogDetails />} />
+                    <Route path="/blog" element={<Blogs />} />
+                    {/* <Route path="/blog/:id" element={<BlogDetails />} /> */}
+                    <Route path="/blog/:slug" element={<BlogDetails />} />
                     <Route path="/case-studies" element={<Case />} />
                     <Route path="/case-study/:slug" element={<CaseDetails />} />
                     <Route path="/reviews" element={<Review />} />

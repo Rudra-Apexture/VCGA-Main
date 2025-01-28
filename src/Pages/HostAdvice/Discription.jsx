@@ -9,10 +9,6 @@ import { GiCheckMark } from "react-icons/gi";
 import { FaArrowRight } from "react-icons/fa";
 import laptop from "../../assets/images/Laptops.webp";
 
-
-
-
-
 const Discription = () => {
 
     const [activeIndex, setActiveIndex] = useState(0);

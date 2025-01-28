@@ -153,3 +153,59 @@ body {
     background: #E2E5EA;
     /* Color of the thumb */
 }
+
+.heding {
+    color: #EB597A;
+    font-weight: 700;
+    font-size: 2.25rem;
+    margin-bottom: 1rem !important;
+    line-height: 2.5rem;
+    margin: 0;
+    padding-top: 1.35rem;
+    padding-bottom: .35rem;
+    display: inline-block;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to right, #F2388A, transparent) 1;
+}
+
+/* From Uiverse.io by gharsh11032000 */
+.button {
+    cursor: pointer;
+    position: relative;
+    padding: 5px 24px;
+    font-size: 18px;
+    color: #ff9ab6;
+    border: 2px solid #ff9ab6;
+    border-radius: 34px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: #ff9ab6;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.button:hover::before {
+    scale: 3;
+}
+
+.button:hover {
+    color: white;
+    box-shadow: 0 0px 10px #ff9ab6;
+}
+
+.button:active {
+    scale: 1;
+}

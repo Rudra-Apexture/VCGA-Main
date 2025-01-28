@@ -8,8 +8,15 @@ import Pricing from './Pricing';
 import Satisfaction from './Satisfaction';
 import CaseStudies from './CaseStudies';
 import FAQ from './FAQ';
-import Blog from './Blog';
+// import Blog from './Blog';
 import Grow from './Grow';
+import Blogs from './Blogs';
+import blog1 from "../assets/Images/blog-img-1.webp";
+import blog2 from "../assets/Images/blog-img-2.webp";
+import blog3 from "../assets/Images/blog-img-3.webp";
+import blog4 from "../assets/Images/blog-img-4.webp";
+import blog5 from "../assets/Images/blog-img-5.webp";
+import blog6 from "../assets/Images/blog-img-6.webp";
 
 const Home_Page = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
@@ -17,7 +24,7 @@ const Home_Page = () => {
     useEffect(() => {
         const handleScroll = () => {
             // Show the button when scrolling down a bit, hide if at top
-            if (window.scrollY > 200 ) {
+            if (window.scrollY > 200) {
                 setShowScrollButton(true);
             } else {
                 setShowScrollButton(false);
@@ -43,8 +50,7 @@ const Home_Page = () => {
             <CaseStudies />
             <FAQ />
             <Grow />
-            <Blog />
-
+            <Blogs />
             {showScrollButton && (
                 <button
                     onClick={scrollToTop}
