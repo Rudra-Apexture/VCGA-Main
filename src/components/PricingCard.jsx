@@ -2,8 +2,6 @@ import React from 'react'
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 
 const PricingCard = () => {
-
-
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 lg:gap-6 gap-4">
             {data.map(item => (

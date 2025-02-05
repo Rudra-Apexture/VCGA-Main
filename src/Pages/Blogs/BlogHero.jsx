@@ -7,7 +7,7 @@ const BlogHero = () => {
         <Hero
             mainHeading="Level Up Your "
             mainHeadingHighlight="Blogs "
-            description="A blog section is a dedicated part of a website where articles, updates, or stories are shared. It typically right then includes a collection of posts with a title."
+            description="Welcome to our blog! Here you'll find our thoughts on [topic], from expert advice to behind-the-scenes stories. Join the discussion and connect with our community of readers."
             showButton={false} // Set showButton to false to hide the button
         />
     );

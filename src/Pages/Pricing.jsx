@@ -1,7 +1,7 @@
 import React from 'react';
-import { GiCheckMark } from "react-icons/gi";
 import HighlightedHeading from "../components/HighlightedHeading";
-
+import { Link } from 'react-router-dom';
+import { FaTrophy, FaCheckCircle, FaMedal, FaCrown, FaGem } from "react-icons/fa";  // Trophy icon for highlighting
 
 const Pricing = () => {
     const data = [
@@ -12,12 +12,13 @@ const Pricing = () => {
             tag: "Silver",
             features: [
                 "High Speed SiteGround hosting free",
-                "WordPress core, themes, and plugins Updates",
+                "Core, Themes, and Plugins Updates",
                 "Cloud Backups: 14-day retention.",
                 "Uptime Monitoring",
                 "Speed & Performance Optimization",
                 "Version Control",
                 "Activity Log",
+                "Monthly Maintenance Report",
             ],
         },
         {
@@ -25,7 +26,7 @@ const Pricing = () => {
             name: "SiteGuard Proactive",
             price: "$89",
             tag: "Gold",
-            isMostPopular: true, // Added this flag
+            isMostPopular: true,
             features: [
                 "High Speed SiteGround hosting free",
                 "All Silver Plan Features",
@@ -34,7 +35,7 @@ const Pricing = () => {
                 "WooCommerce Optimization",
                 "Cart Abandonment Solutions",
                 "Bi-Weekly Detailed Reports",
-                "Add Customize Services +$99",
+                "Unlimited 24/7 Chat Priority Support",
             ],
         },
         {
@@ -46,9 +47,8 @@ const Pricing = () => {
                 "High Speed SiteGround hosting free",
                 "All Gold Plan Features",
                 "Git Management",
-                "Ongoing CRO strategies",
-                "Ongoing CRO strategies",
-                "Detailed SEO audits",
+                "Ongoing CRO Strategies",
+                "Detailed SEO Audits",
                 "Google Analytics Integration",
                 "Secure Payment Gateway Integration",
                 "Performance and Speed Optimization",
@@ -59,65 +59,89 @@ const Pricing = () => {
     const getTagStyle = (tag) => {
         switch (tag) {
             case "Silver":
-                return { backgroundColor: "#c9c9c9", color: "#3E4644" };
+                return {
+                    className: "bg-gray-100 text-gray-600",
+                    icon: <FaMedal className="inline-block mr-2 text-base" />, // Adjusted size and margin
+                };
             case "Gold":
-                return { backgroundColor: "#F7E8B3", color: "#E4B200" };
+                return {
+                    className: "bg-yellow-100 text-yellow-600",
+                    icon: <FaCrown className="inline-block mr-2 text-base" />,  // Adjusted size and margin
+                };
             case "Platinum":
-                return { backgroundColor: "#B3C7DC", color: "#00458A" };
+                return {
+                    className: "bg-blue-100 text-blue-600",
+                    icon: <FaGem className="inline-block mr-2 text-base" />,  // Adjusted size and margin
+                };
             default:
-                return { backgroundColor: "#e0e0e0", color: "#000" };
+                return {
+                    className: "bg-gray-200 text-gray-700",
+                    icon: null,
+                };
         }
     };
 
     return (
-        <section className="bg-white py-12">
+        <section className="md:pt-10 pt-5 bg-white">
             <div className="container mx-auto">
-                {/* <h1 className='md:text-xlarge text-basic text-center font-bold text-primary mb-16'> Flexible Pricing for <span className='bg-gradient rounded-full text-[#1D49C3] pt-2 font-bold '>Your Growth
-                </span> </h1> */}
-                <div className='md:mb-24 mb-12'>
+                <div className="flex pb-14 justify-center items-center">
                     <HighlightedHeading
-                        mainText="Flexible Pricing for"
+                        mainText="Flexible Pricing for "
                         highlightedText="Your Growth "
                         center={true}
                     />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:gap-6 gap-4">
+                <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-8 gap-4">
                     {data.map(item => (
-                        <div key={item.id} className="bg-white rounded-medium shadow-main border border-gray-300 p-6 flex flex-col space-y-4 relative">
-                            <div className={`rounded-md inline-block w-24 text-center p-1.5 text-small font-bold`} style={getTagStyle(item.tag)}>{item.tag}</div>
-                            <h3 className="lg:text-base text-medium font-semibold text-primary">{item.name}</h3>
-                            <div className="flex items-center mb-4">
-                                <span className="lg:text-5xl text-large font-bold text-primary">{item.price}</span>
-                                <span className="text-[#020D0AB2] font-medium ml-2 mt-6">Per Month</span>
-                            </div>
-                            <div className='py-2.5'>
-                                <hr />
-                            </div>
+                        <div
+                            key={item.id}
+                            className={`relative rounded-medium shadow-main bg-white hover:shadow-lg transition-shadow duration-300 ${item.isMostPopular ? 'border-4 border-light-blue' : 'border border-gray-300'
+                                }`}
+                        >
                             {item.isMostPopular && (
-                                <div className="absolute -top-[60px] lg:-right-32 -right-16 rounded-tl-medium rounded-tr-medium md:block hidden -translate-x-1/2 bg-light-blue text-white px-10 lg:px-28 md:px-10 py-2.5 text-center text-small font-medium">
-                                    Most Popular
+                                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-light-blue text-white py-2 px-6 rounded-full shadow-md text-sm font-bold flex items-center space-x-2">
+                                    <FaTrophy className="size-4" />
+                                    <span>Most Popular</span>
                                 </div>
                             )}
-                            <button className="bg-light-blue text-white py-3.5 rounded-md
-                             border border-[#103498] text-medium inline-block text-center font-medium hover:bg-[#103498] transition-colors duration-200">View Full Plans</button>
-                            <ul className="list-inside list-none space-y-2">
-                                {/* Lists Items */}
-                                {item.features.map((feature, index) => (
-                                    <li key={index} className="flex items-center mt-2">
-                                        <GiCheckMark className='size-4 text-light-blue mr-2' />
-                                        <span className={`text-small text-primary font-medium leading-7 ${index === 0 ? 'font-bold' : ''}`}>
+
+                            <div className="p-4">
+                                <div className={`text-sm font-semibold uppercase tracking-wider text-center my-4 ${getTagStyle(item.tag).className} py-1.5 rounded flex items-center justify-center`}>
+                                    {getTagStyle(item.tag).icon} {item.tag}  {/* Icon before the text */}
+                                </div>
+
+                                <h3 className="text-base font-bold text-primary text-center mb-4">
+                                    {item.name}
+                                </h3>
+
+                                <div className="flex items-center justify-center mb-6">
+                                    <span className="text-5xl font-bold text-light-blue">{item.price}</span>
+                                    <span className="text-gray-500 ml-1">/ month</span>
+                                </div>
+
+                                <ul className="space-y-4 mb-8">
+                                    {item.features.map((feature, index) => (
+                                        <li key={index} className="flex items-center text-primary font-medium">
+                                            <FaCheckCircle className="text-green-500 mr-2 size-4" />
                                             {feature}
-                                        </span>
-                                    </li>
-                                ))}
-                            </ul>
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                <Link
+                                    to="/services"
+                                    className="block bg-light-blue hover:bg-blue-900 text-white py-3 rounded-lg text-center font-semibold transition-colors duration-300"
+                                >
+                                    View Full Plans
+                                </Link>
+                            </div>
                         </div>
                     ))}
                 </div>
             </div>
         </section>
     );
-}
+};
 
 export default Pricing;

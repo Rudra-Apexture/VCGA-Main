@@ -4,6 +4,7 @@ import Simplicity from "../../assets/images/Simplicity.svg";
 import Customer from "../../assets/images/Customer.svg";
 import Transparency from "../../assets/images/Transparency.svg";
 import Commitment from "../../assets/images/Commitment.svg";
+import { faL } from '@fortawesome/free-solid-svg-icons';
 
 const Ourvalue = () => {
   const valueCards = [
@@ -34,9 +35,11 @@ const Ourvalue = () => {
   ];
 
   return (
-    <section className="Our-value py-12">
+    <section className="Our-value md:pt-10 pt-5">
       <div className="container mx-auto">
-        <HighlightedHeading mainText="Our " highlightedText="Values " center={true} />
+        <div className='flex justify-center items-center'>
+          <HighlightedHeading mainText="Our " highlightedText="Values " center={true} />
+        </div>
         <div className="flex justify-center items-center">
           <div className="max-w-3xl grid md:grid-cols-2 gap-6 mt-6">
             {valueCards.map((card, index) => (

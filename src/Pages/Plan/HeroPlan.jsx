@@ -9,7 +9,7 @@ const HeroPlan = () => {
                 mainHeading="Transparent Pricing. "
                 mainHeadingHighlight="Exceptional Quality. "
                 description="Are Your WordPress success starts here – clear pricing, customized solutions, and outstanding results, with guaranteed performance and expert support every step."
-                buttonText="Get Started Now!"
+                showButton={false}
             />
         </div>
     );

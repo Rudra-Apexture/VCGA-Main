@@ -17,12 +17,12 @@ const Discription = () => {
         {
             question: 'Does UltaHost offer a money-back guarantee?',
             answer:
-                'Yes, you can get a refund on Shared, VPS, VDS Server, WordPress Hosting, Windows Hosting, and Windows Hosting plans within 30 days of your purchase. However, domain registration and cPanel aren\'t eligible for a refund. Also, you need to submit the request before closing your account with UltaHost so it can process.  You won\'t be able to get a refund on a monthly dedicated hosting plan. Feel free to check the <a href="#" class="text-blue-300 hover:underline">refund policy</a> for more details.',
+                'Yes, you can get a refund on Shared, VPS, VDS Server, WordPress Hosting, Windows Hosting, and Windows Hosting plans within 30 days of your purchase. However, domain registration and cPanel aren\'t eligible for a refund. Also, you need to submit the request before closing your account with UltaHost so it can process.  You won\'t be able to get a refund on a monthly dedicated hosting plan. Feel free to check the <a href="#" className="text-blue-300 hover:underline">refund policy</a> for more details.',
         },
         {
             question: 'How can I join UltaHost\'s Affiliate program?',
             answer:
-                'You can join the UltaHost affiliate program by visiting our <a href="#" class="text-blue-300 hover:underline">affiliate program page</a> and following the instructions to sign up. Once approved, you will gain access to all the necessary tools and resources to promote our services.',
+                'You can join the UltaHost affiliate program by visiting our <a href="#" className="text-blue-300 hover:underline">affiliate program page</a> and following the instructions to sign up. Once approved, you will gain access to all the necessary tools and resources to promote our services.',
         },
         {
             question: 'Does UltaHost offer customer support?',
@@ -159,23 +159,23 @@ const Discription = () => {
                         <button className='bg-[#0d80F2] text-white font-medium mt-4 px-14 py-2 rounded-full'>
                             Visit Ultahost
                         </button>
-                        <div class="overflow-y-auto max-h-32 w-60 custom-scroll border-t border-b border-gray-300 my-4">
+                        <div className="overflow-y-auto max-h-32 w-60 custom-scroll border-t border-b border-gray-300 my-4">
                             <nav>
                                 <ul>
                                     <li>
-                                        <a href="#" class="block px-2 py-1 text-blue-500 font-medium hover:bg-gray-100">Expert Review</a>
+                                        <a href="#" className="block px-2 py-1 text-blue-500 font-medium hover:bg-gray-100">Expert Review</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="block px-2 py-1 text-[#16181DB3] hover:text-blue-500 hover:bg-gray-50">User Reviews</a>
+                                        <a href="#" className="block px-2 py-1 text-[#16181DB3] hover:text-blue-500 hover:bg-gray-50">User Reviews</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="block px-2 py-1 text-[#16181DB3] hover:text-blue-500 hover:bg-gray-50">Hosting Plans</a>
+                                        <a href="#" className="block px-2 py-1 text-[#16181DB3] hover:text-blue-500 hover:bg-gray-50">Hosting Plans</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="block px-2 py-1 text-[#16181DB3] hover:text-blue-500 hover:bg-gray-50">FAQ</a>
+                                        <a href="#" className="block px-2 py-1 text-[#16181DB3] hover:text-blue-500 hover:bg-gray-50">FAQ</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="block px-2 py-1 text-[#16181DB3] hover:text-blue-500 hover:bg-gray-50">Similar Companies</a>
+                                        <a href="#" className="block px-2 py-1 text-[#16181DB3] hover:text-blue-500 hover:bg-gray-50">Similar Companies</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -198,22 +198,22 @@ const Discription = () => {
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptatum praesentium sapiente voluptates maxime! Eos, quos. Natus quidem odio animi neque magnam provident laudantium beatae quaerat incidunt. Molestias, pariatur ea.</p>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium accusamus corrupti laboriosam illum aperiam explicabo ut labore unde, eius velit deleniti aut maxime, odit odio illo molestiae, exercitationem quo reiciendis!</p>
                     </div>
-                    <div class="bg-white border rounded-xl shadow-lg p-4 w-1/4 py-10">
-                        <div class="flex justify-between items-center mb-2">
-                            <div class="flex items-center border-b border-gray-300 w-full pb-4">
-                                <img src={happy} alt="User Avatar" class="h-16 rounded-full mr-2" />
+                    <div className="bg-white border rounded-xl shadow-lg p-4 w-1/4 py-10">
+                        <div className="flex justify-between items-center mb-2">
+                            <div className="flex items-center border-b border-gray-300 w-full pb-4">
+                                <img src={happy} alt="User Avatar" className="h-16 rounded-full mr-2" />
                                 <div className='space-y-1'>
-                                    <div class="text-[#0b0c0f] font-bold text-[18px]">Matheilda Haze</div>
-                                    <div class="text-[#16181DB3] font-medium text-sm">Germany</div>
-                                    <div class="text-[#16181DB3] text-sm">
+                                    <div className="text-[#0b0c0f] font-bold text-[18px]">Matheilda Haze</div>
+                                    <div className="text-[#16181DB3] font-medium text-sm">Germany</div>
+                                    <div className="text-[#16181DB3] text-sm">
                                         <span> 24 Jan, 2025 | 06:01</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex items-center mb-2 gap-2">
-                            <div class="text-[#0b0c0f] font-bold text-xl">5.0</div>
-                            <div class="flex space-x-0.5">
+                        <div className="flex items-center mb-2 gap-2">
+                            <div className="text-[#0b0c0f] font-bold text-xl">5.0</div>
+                            <div className="flex space-x-0.5">
                                 <FaStar className='text-yellow-500' />
                                 <FaStar className='text-yellow-500' />
                                 <FaStar className='text-yellow-500' />
@@ -221,14 +221,14 @@ const Discription = () => {
                                 <FaStar className='text-yellow-500' />
                             </div>
                         </div>
-                        <p class="text-[#0b0c0f] text-[18px] font-bold mb-2">
+                        <p className="text-[#0b0c0f] text-[18px] font-bold mb-2">
                             Ultahost has filled my appetite for best hosting option available
                         </p>
-                        <p class="text-[#0b0c0f] text-[16px] mb-2">
+                        <p className="text-[#0b0c0f] text-[16px] mb-2">
                             Considering the degree of protection they provide, Ultahost's reasonably priced domain hosting has amazed me. I like tha...
                         </p>
                         <div className='border-t border-gray-300 mt-4'>
-                            <a href="#" class="text-[#0d80f2] hover:text-blue-500 font-bold block text-center mt-2">See all reviews (1,145)</a>
+                            <a href="#" className="text-[#0d80f2] hover:text-blue-500 font-bold block text-center mt-2">See all reviews (1,145)</a>
                         </div>
                     </div>
                 </div>
@@ -338,14 +338,14 @@ const Discription = () => {
                     <h2 className="text-2xl font-bold text-gray-800 mb-6">
                         Check Similar Hosting Companies:
                     </h2>
-                    <div class="bg-white border border-gray-300 rounded-lg shadow-md hover:shadow-lg p-4 w-full max-w-md">
-                        <div class="flex flex-col md:flex-row space-y-5 md:space-y-0 items-center justify-between mb-4">
-                            <div class="flex items-center">
+                    <div className="bg-white border border-gray-300 rounded-lg shadow-md hover:shadow-lg p-4 w-full max-w-md">
+                        <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 items-center justify-between mb-4">
+                            <div className="flex items-center">
                                 <img src={hostman} alt="" className='h-10' />
                             </div>
-                            <div class="text-right flex flex-col items-center space-y-1.5">
-                                <div class="flex items-center justify-end">
-                                    <span class="text-xl font-bold text-gray-800 mr-1">5.0</span>
+                            <div className="text-right flex flex-col items-center space-y-1.5">
+                                <div className="flex items-center justify-end">
+                                    <span className="text-xl font-bold text-gray-800 mr-1">5.0</span>
                                     <div className='flex text-yellow-500 text-xl'>
                                         <FaStar />
                                         <FaStar />
@@ -354,14 +354,14 @@ const Discription = () => {
                                         <FaStar />
                                     </div>
                                 </div>
-                                <h3 class="font-medium text-sm text-[#0d80f2]">Hostman review</h3>
-                                <h1 class="text-[12px] text-[#16181db3] font-medium">15 reviews</h1>
+                                <h3 className="font-medium text-sm text-[#0d80f2]">Hostman review</h3>
+                                <h1 className="text-[12px] text-[#16181db3] font-medium">15 reviews</h1>
                             </div>
                         </div>
 
-                        <ul class="my-10 space-y-2">
+                        <ul className="my-10 space-y-2">
                             <div className='flex items-center gap-2'>
-                                <li class="text-gray-700 gap-2">
+                                <li className="text-gray-700 gap-2">
                                     <GiCheckMark className='h-4' />
                                 </li>
                                 <p className='text-sm md:text-[16px]'>
@@ -369,7 +369,7 @@ const Discription = () => {
                                 </p>
                             </div>
                             <div className='flex items-center gap-2'>
-                                <li class="text-gray-700 gap-2">
+                                <li className="text-gray-700 gap-2">
                                     <GiCheckMark className='h-4' />
                                 </li>
                                 <p className='text-sm md:text-[16px]'>
@@ -377,7 +377,7 @@ const Discription = () => {
                                 </p>
                             </div>
                             <div className='flex items-center gap-2'>
-                                <li class="text-gray-700 gap-2">
+                                <li className="text-gray-700 gap-2">
                                     <GiCheckMark className='h-4' />
                                 </li>
                                 <p className='text-sm md:text-[16px]'>
@@ -386,11 +386,11 @@ const Discription = () => {
                             </div>
                         </ul>
 
-                        <div class="flex flex-col md:flex-row items-center justify-between py-5 space-y-5 md:space-y-0">
-                            <div class="text-4xl font-medium text-black">
-                                $4.00<span class="text-sm font-medium text-gray-500">/mo</span>
+                        <div className="flex flex-col md:flex-row items-center justify-between py-5 space-y-5 md:space-y-0">
+                            <div className="text-4xl font-medium text-black">
+                                $4.00<span className="text-sm font-medium text-gray-500">/mo</span>
                             </div>
-                            <a href="#" class="bg-blue-500 hover:bg-blue-700 gap-2 text-white font-bold py-2 px-10 rounded-full flex items-center">
+                            <a href="#" className="bg-blue-500 hover:bg-blue-700 gap-2 text-white font-bold py-2 px-10 rounded-full flex items-center">
                                 Visit Site
                                 <FaArrowRight className='h-6' />
                             </a>
@@ -400,13 +400,13 @@ const Discription = () => {
             </section>
 
             {/*  finding the right host */}
-            <div class="bg-[#F6F7F8] shadow-md container mx-auto rounded-2xl">
-                <div class="flex flex-col md:flex-row  items-center justify-between p-4 ">
-                    <div class="max-w-2xl space-y-5 order-2 md:order-1">
-                        <h2 class="md:text-2xl text-xl font-bold text-gray-800 mb-2">Need help with finding the right host for your needs?</h2>
-                        <p class="text-gray-600 mb-4">Answer a few simple questions and find the perfect solution for you!</p>
-                        <button class="bg-blue-500 hover:bg-blue-700 transition-all duration-200 ease-in text-white font-medium py-2 px-4 rounded-full flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <div className="bg-[#F6F7F8] shadow-md container mx-auto rounded-2xl">
+                <div className="flex flex-col md:flex-row  items-center justify-between p-4 ">
+                    <div className="max-w-2xl space-y-5 order-2 md:order-1">
+                        <h2 className="md:text-2xl text-xl font-bold text-gray-800 mb-2">Need help with finding the right host for your needs?</h2>
+                        <p className="text-gray-600 mb-4">Answer a few simple questions and find the perfect solution for you!</p>
+                        <button className="bg-blue-500 hover:bg-blue-700 transition-all duration-200 ease-in text-white font-medium py-2 px-4 rounded-full flex items-center">
+                            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                             Start Hosting Search
                         </button>
                     </div>

@@ -8,10 +8,6 @@ import { FaTwitter } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 
-
-
-
-
 const BlogDetails = () => {
     const { slug } = useParams();
     const [blogPost, setBlogPost] = useState(null);

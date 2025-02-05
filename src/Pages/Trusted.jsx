@@ -9,7 +9,7 @@ const Trusted = () => {
             id: 1,
             value: 98,
             suffix: "%",
-            description: "98% happiness score with 5+ years of WordPress expertise.",
+            description: "98% happiness score with 5+ years of the WordPress expertise.",
         },
         {
             id: 2,
@@ -19,38 +19,40 @@ const Trusted = () => {
         },
         {
             id: 3,
-            value: 10,
+            value: 5,
             suffix: "sec",
-            description: "Need help? Wait less than 10 seconds for instant customer service.",
+            description: "Need help? Wait less than 5 seconds for instant customer service.",
         },
     ];
 
     const { ref, inView } = useInView({
-        threshold: 1, // Start animation when 10% of the component is visible
-        triggerOnce: true, // Only trigger once
+        threshold: 1,
+        triggerOnce: true,
     });
 
     return (
-        <section className="bg-white lg:py-12" ref={ref}>
+        <section className="bg-white md:pt-10 pt-5" ref={ref}>
             <div className="container mx-auto">
-                <HighlightedHeading
-                    mainText="Your Trusted Partner in "
-                    highlightedText="WordPress Care"
-                    center={true}
-                />
+                <div className='flex justify-center items-center'>
+                    <HighlightedHeading
+                        mainText="Your Trusted Partner"
+                        highlightedText="WordPress Care"
+                        center={true}
+                    />
+                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:py-20 py-5">
                     {data.map((item) => (
-                        <div key={item.id} className="flex flex-col items-center justify-center space-y-5">
+                        <div key={item.id} className="flex flex-col items-center justify-center space-y-5 md:border-none border-b border-gray-300 md:pb-0 pb-5">
                             <CountUp
                                 start={0}
                                 end={inView ? item.value : 0}
-                                duration={5} // Animation duration in seconds
+                                duration={4}
                                 separator=","
                                 suffix={item.suffix}
-                                className="lg:text-5xl text-large font-semibold text-primary"
+                                className="lg:text-5xl text-large font-bold text-primary"
                             />
-                            <p className="text-center lg:text-medium font-medium text-primary max-w-64">
+                            <p className="text-center lg:text-medium font-medium">
                                 {item.description}
                             </p>
                         </div>

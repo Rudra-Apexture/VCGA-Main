@@ -6,21 +6,22 @@ import HomePage from "../Pages/HomePage";
 import CaseDetails from '../Pages/CaseStudies/CaseDetails';
 import ScrollToTop from '../components/Scroll-to-Top';
 import Blogs from '../Pages/Blogs';
-import BlogDetails from '../Pages/BlogDetails';
+// import BlogDetails from '../Pages/BlogDetails';
 
 
 const Service = lazy(() => import('../Pages/Services/Service'));
 const Case = lazy(() => import('../Pages/CaseStudies/Case'));
-// const Blog = lazy(() => import('../Pages/Blogs/Blog'));
-// const BlogDetails = lazy(() => import('../Pages/Blogs/BlogDetails'));
+const Blog = lazy(() => import('../Pages/Blogs/Blog'));
+const BlogDetails = lazy(() => import('../Pages/Blogs/BlogDetails'));
 const Review = lazy(() => import('../Pages/Reviews/Review'));
 const AboutUs = lazy(() => import('../Pages/AboutUs/AboutUs'));
 const Contact = lazy(() => import('../Pages/ContactUs/Contact'));
 const Privacy = lazy(() => import('../Pages/PrivacyPolicy'));
 const TermService = lazy(() => import('../Pages/TermService'));
+const FeatureMain = lazy(() => import('../Pages/Features/FeatureMain'));
 const PlanPage = lazy(() => import('../../src/Pages/Plan/PlanPage'));
-const HostMain = lazy(() => import('../../src/Pages/HostAdvice/HostMain'));
 const Error404 = lazy(() => import('../../src/Pages/Error404'));
+
 
 
 const Website_Route = () => {
@@ -32,9 +33,9 @@ const Website_Route = () => {
                 <Routes>
                     <Route exact path="/" element={<HomePage />} />
                     <Route path="/services" element={<Service />} />
-                    <Route path="/blog" element={<Blogs />} />
-                    {/* <Route path="/blog/:id" element={<BlogDetails />} /> */}
-                    <Route path="/blog/:slug" element={<BlogDetails />} />
+                    <Route path="/blog" element={<Blog />} />
+                    <Route path="/blog/:blogSlug" element={<BlogDetails />} />
+                    {/* <Route path="/blog/:slug" element={<BlogDetails />} /> */}
                     <Route path="/case-studies" element={<Case />} />
                     <Route path="/case-study/:slug" element={<CaseDetails />} />
                     <Route path="/reviews" element={<Review />} />
@@ -43,7 +44,7 @@ const Website_Route = () => {
                     <Route path="/term-service" element={<TermService />} />
                     <Route path="/contact-us" element={<Contact />} />
                     <Route path="/see-pricing" element={<PlanPage />} />
-                    <Route path="/hostadvice" element={<HostMain />} />
+                    <Route path="/checkout" element={<FeatureMain />} />
                     {/* Added Error404 route */}
                     <Route path="*" element={<Error404 />} />
 

@@ -3,6 +3,7 @@ import sarah from "../../assets/images/Sarah-Mitchell-1.jpg";
 import google from "../../assets/images/google.svg";
 import tom from "../../assets/images/Tom.jpg";
 import John from "../../assets/images/John-Taylor.jpg";
+import { Link } from 'react-router';
 
 const ClientStory = () => {
 
@@ -29,7 +30,7 @@ const ClientStory = () => {
     ];
 
     return (
-        <section className='Client-Main pt-12'>
+        <section className='Client-Main pt-10'>
             <div className="container mx-auto ">
                 {/* <!-- Main Container --> */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -48,24 +49,26 @@ const ClientStory = () => {
                                 <img
                                     src={testimonials[0].image}
                                     alt={testimonials[0].name}
-                                    className="rounded-full md:size-12 size-10 object-cover mr-2.5"
+                                    className="rounded-full md:size-16 size-14 object-cover mr-2.5"
                                 />
-                                <div className="flex flex-col space-y-1 md:items-start">
+                                <div className="flex flex-col md:items-start">
                                     <h4 className="text-medium font-bold text-primary ">{testimonials[0].name}
                                     </h4>
-                                    <h1 className='text-small font-medium text-[#686B72]'>{testimonials[0].title}</h1>
+                                    <h1 className='text-small font-medium text-[#686B72] hidden md:block'>{testimonials[0].title}</h1>
                                 </div>
                             </div>
 
-                            <img src={google} alt="Google" className="md:size-12" />
+                            <img src={google} alt="Google" className="md:size-10 size-8" />
                         </div>
 
-                        <p className="mt-4 text-primary font-medium">
+                        <p className="mt-4 text-gray-700 font-medium text-small md:text-medium">
                             {testimonials[0].review}
                         </p>
-                        <button className="mt-8 bg-light-blue text-white font-bold px-10 py-4 rounded-xl hover:bg-blue-700">
-                            Read All Reviews
-                        </button>
+                        <Link to="/reviews">
+                            <button className="mt-6 bg-light-blue text-white font-medium px-10 py-4 rounded-md hover:bg-blue-900 transition-colors duration-200 ease-in">
+                                Read All Reviews
+                            </button>
+                        </Link>
                     </div>
 
                     {/*  <!-- Right Section --> */}
@@ -87,7 +90,7 @@ const ClientStory = () => {
 
                                     <img src={google} alt="Google" className="md:size-10 size-8 md:block hidden" />
                                 </div>
-                                <p className="mt-4 text-primary">
+                                <p className="mt-4 text-gray-700 text-medium font-medium">
                                     {testimonial.review}
                                 </p>
                             </div>

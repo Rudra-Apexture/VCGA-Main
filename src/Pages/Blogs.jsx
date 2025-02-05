@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import blog from "../assets/Images/blog.png";
-import { BsArrowRight } from "react-icons/bs";
-
-
-
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const Blogs = () => {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -73,10 +70,10 @@ const Blogs = () => {
 
                   <div className="p-4 space-y-4">
                     <div className="flex items-center gap-4">
-                      <span className="text-[#6B7280] font-medium text-[18px] ">{post.date}</span>
-                      {/* <span className="bg-violet-500 text-white text-xs font-medium px-2.5 py-1 rounded-xl">
+                      <span className="text-[#6B7280] font-normal text-[18px] ">{post.date}</span>
+                      <span className="bg-[#D946EF] hover:bg-[#7e3af2] transition-all duration-200 ease-in text-white text-xs font-medium px-2.5 py-0.5 rounded-xl">
                         {post.category}
-                      </span> */}
+                      </span>
                     </div>
                     <div>
                       <h2 className="text-xl font-bold text-gray-900">
@@ -87,12 +84,12 @@ const Blogs = () => {
                         {/* <button className="px-8 py-2 border-[1.5px] border-blue-300  hover:bg-blue-300 hover:text-white font-medium transition-all duration-200 ease-in rounded-lg">
                           Read More
                         </button> */}
-                        <button class="button">
+                        <button className="button flex items-center gap-4">
                           Read More
+                          <FaArrowRightLong className="size-5" />
                         </button>
                       </div>
                     </div>
-
                   </div>
                 </Link>
               ))

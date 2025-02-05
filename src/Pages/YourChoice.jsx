@@ -3,57 +3,73 @@ import users from "../assets/images/team.svg";
 import power from "../assets/images/flash.svg";
 import setting from "../assets/images/setting.svg";
 import friend from "../assets/images/meetup.svg";
-import HighlightedHeading from '../components/HighlightedHeading';
 
 const YourChoice = () => {
     const data = [
         {
             id: 1,
-            title: "5+ Years of WordPress Expertise: Proven Results",
-            description: "With more than five years of expertise, we have approved 1,500+ firms to supercharge performance, improve security, ensure seamless updates, enhance your site's usability, drive rankings, and drive real, measurable growth for your business.",
-            icon: users
+            title: "5+ Year of WordPress Expertise Results",
+            description: "With more than five years of expertise, we have empowered 1,500+ firms to supercharge performance, improve security, and drive real, measurable growth for their business.",
+            icon: users,
+            bgColor: "from-blue-500 to-sky-500",
         },
         {
             id: 2,
-            title: "Boost Your Site's Speed with Free Hosting",
-            description: "Say goodbye to slow load times! With every WordPress maintenance plan, we provide complimentary high-speed hosting to give your visitors the fast, smooth experience they expect. Better performance = higher engagement and improved SEO rankings. No extra fees for superior speed!",
-            icon: power
+            title: "Boost Your Site’s Speed with Free Hosting",
+            description: "Say goodbye to slow load times! With every WordPress maintenance plan, we provide complimentary high-speed hosting to ensure a seamless user experience.",
+            icon: power,
+            bgColor: "from-purple-500 to-violet-300",
         },
         {
             id: 3,
             title: "Customized WordPress Maintenance for Growth",
-            description: "Our customized WordPress maintenance services are designed to align with your specific business goals. Whether you're aiming to boost site performance, enhance user experience, or drive more sales, we transform your website into a growth engine that works for you.",
-            icon: setting
+            description: "Our tailored maintenance services align with your specific business goals, helping to you optimize performance, enhance UX, with increase more conversions.",
+            icon: setting,
+            bgColor: "from-green-500 to-teal-500",
         },
         {
             id: 4,
             title: "Trusted by Thousands for WordPress Success",
-            description: "From small businesses to large enterprises, thousands of clients trust us to protect, optimize, and grow their websites. With 98% customer satisfaction, (domain name) becomes your reliable partner, boosting performance, ensuring security, and helping your business thrive online with expert support every step of the way.",
-            icon: friend
+            description: "Thousands of clients trust us to protect,Real-World Applications of WordPress, optimize, and grow their websites, ensuring security, performance, and 24/7 expert support.",
+            icon: friend,
+            bgColor: "from-orange-500 to-red-500",
         },
     ];
 
     return (
-        <section className="Choice">
+        <section className="md:pt-10 pt-5">
             <div className="container mx-auto">
+                {/* Section Heading */}
                 <div className='flex justify-center items-center'>
-                    <h1 className='md:text-xlarge text-basic text-center font-bold text-primary mb-12 max-w-[650px]'>Why We’re the Right Choice For Your <span className='bg-gradient rounded-full text-[#1D49C3] py-0.5 font-bold '>WordPress Maintenance?</span> </h1>
+                    <h1 className='md:text-xlarge text-basic text-center font-bold text-primary max-w-2xl'>Why We’re the Right Choice For Your <span className='bg-gradient rounded-full text-light-blue py-0.5 font-bold '>WordPress Maintenance?</span> </h1>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 cursor-pointer">
-                    {data.map(item => (
-                        <div key={item.id} className="bg-white border border-gray-300/50 hover:bg-[#E2EBFF] transition-all ease-in duration-200 p-4 rounded-medium flex flex-col space-y-4 shadow-main">
-                            <div className="flex items-center gap-4">
-                                <img src={item.icon} alt={`${item.title} Icon`} className="lg:size-10 size-8" />
-                                <h3 className="lg:text-basic text-base font-semibold text-primary">{item.title}</h3>
+                {/* Cards Section */}
+                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {data.map((item) => (
+                        <div key={item.id} className="relative group">
+                            {/* Card Background with Gradient Border */}
+                            <div className={`absolute inset-0 bg-gradient-to-br ${item.bgColor} rounded-xl blur-[1.5px] transition-all duration-300`}></div>
+
+                            {/* Card Content */}
+                            <div className="relative bg-white shadow-lg rounded-xl lg:p-6 p-4 flex flex-col items-center text-center transform transition-all duration-300">
+                                {/* Icon */}
+                                <div className="p-3 mb-6">
+                                    <img src={item.icon} alt={item.title} className="size-12" />
+                                </div>
+
+                                {/* Title */}
+                                <h3 className="text-xl font-medium text-primary">{item.title}</h3>
+
+                                {/* Description */}
+                                <p className="text-gray-700 font-normal text-small break-words mt-5">{item.description}</p>
                             </div>
-                            <p className="text-primary font-medium text-medium max-w-[550px] leading-7 lg:ps-14 ps-12">{item.description}</p>
                         </div>
                     ))}
                 </div>
             </div>
         </section>
     );
-}
+};
 
 export default YourChoice;

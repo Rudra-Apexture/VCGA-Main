@@ -3,12 +3,16 @@ import HighlightedHeading from '../../components/HighlightedHeading';
 import ring from '../../assets/images/ring.svg';
 import gold from '../../assets/images/gold.svg';
 import star from '../../assets/images/star.svg';
+import { Link } from 'lucide-react';
 
 const Tooltip = ({ content, isVisible }) => {
     return (
         <div
-            className={`term-tooltip-content bg-white border border-gray-300 rounded-xl absolute md:left-4 left-0 md:text-small text-xxs text-primary font-medium md:top-10 top-14 z-10 p-2.5 shadow-main transform transition-opacity duration-300 ease-in ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            className={`term-tooltip-content bg-white border border-gray-300 rounded-xl absolute md:left-4 left-0 md:text-small text-xxs text-primary font-medium md:top-10 top-14 z-10 p-5 shadow-main transform transition-transform duration-300 ease-in pointer-events-none ${isVisible ? 'translate-y-0' : '-translate-y-2'
                 }`}
+            style={{
+                opacity: isVisible ? 1 : 0, // Maintain opacity for transition
+            }}
         >
             {content}
         </div>
@@ -148,13 +152,14 @@ const ComparePlan = () => {
     const planTypes = ["silver", "gold", "platinum"];
 
     return (
-        <section className='Pricing-Plan py-12'>
+        <section className='Pricing-Plan md:pt-10 pt-5'>
             <div className='container mx-auto'>
-                <div className='pb-10'>
+                <div className='flex justify-center items-center'>
                     <HighlightedHeading
                         mainText='Compare '
                         highlightedText='Plans '
                         center={true}
+
                     />
                 </div>
             </div>
@@ -188,13 +193,13 @@ const ComparePlan = () => {
                             </tr>
                         </thead>
 
-                        <tbody className='lg:text-medium text-small font-normal cursor-help'>
+                        <tbody className='lg:text-medium text-small font-normal'>
                             {planData.map((item, index) => {
                                 const [isTooltipVisible, setIsTooltipVisible] = useState(false);
                                 return (
                                     <tr key={index}>
                                         <th
-                                            className={`px-6 py-3 border-b border-dashed font-normal relative`}
+                                            className={`px-6 py-3 border-b border-dashed font-normal relative cursor-help`}
                                             onMouseEnter={() => setIsTooltipVisible(true)}
                                             onMouseLeave={() => setIsTooltipVisible(false)}
                                         >
@@ -212,17 +217,17 @@ const ComparePlan = () => {
                             <tr>
                                 <td></td>
                                 <td>
-                                    <button className='lg:px-12 text-nowrap rounded-lg py-3 mt-5 text-white text-medium bg-light-blue font-medium capitalize'>
+                                    <button className='lg:px-12 text-nowrap rounded-lg py-4 mt-5 text-white text-medium bg-light-blue font-medium capitalize'>
                                         get started now
                                     </button>
                                 </td>
                                 <td>
-                                    <button className='lg:px-12 text-nowrap rounded-lg lg:block hidden py-3 mt-5 text-white text-medium bg-light-blue font-medium capitalize'>
+                                    <button className='lg:px-12 text-nowrap rounded-lg lg:block hidden py-4 mt-5 text-white text-medium bg-light-blue font-medium capitalize'>
                                         get started now
                                     </button>
                                 </td>
                                 <td>
-                                    <button className='lg:px-12 text-nowrap rounded-lg lg:block hidden py-3 mt-5 text-white text-medium bg-light-blue font-medium capitalize'>
+                                    <button className='lg:px-12 text-nowrap rounded-lg lg:block hidden py-4 mt-5 text-white text-medium bg-light-blue font-medium capitalize'>
                                         get started now
                                     </button>
                                 </td>

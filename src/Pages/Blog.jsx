@@ -1,20 +1,21 @@
 import React from 'react'
 import HighlightedHeading from '../components/HighlightedHeading'
 import BlogList from '../components/BlogList'
+import { Link } from 'react-router'
 
 const Blog = () => {
     return (
-        <section className='Blogs pb-12'>
+        <section className='Blogs md:pt-10 pt-5'>
             <div className='container mx-auto'>
-                <div className="flex lg:flex-row flex-col items-center justify-between lg:space-y-0 space-y-5 pb-12">
+                <div className="flex items-center md:justify-between justify-center">
                     <HighlightedHeading
-                        mainText="Read our latest "
-                        highlightedText="Articles, Resources, And Guides "
-                        center={true}
+                        mainText="Don’t Miss "
+                        highlightedText="These Updates "
+                        center={false}
                     />
-                    <button className='bg-light-blue px-10 py-3 text-medium capitalize text-white hover:bg-blue-700 rounded-xl'>
-                        visit our blogs
-                    </button>
+                    <Link to="/blog" className='bg-light-blue px-10 py-4 text-medium text-white hover:bg-blue-700 rounded-md hidden md:block'>
+                        Visit our blogs
+                    </Link>
                 </div>
             </div>
             <BlogList />

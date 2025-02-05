@@ -3,13 +3,13 @@ import metting from "../../assets/images/metting.jpg";
 
 const AboutStory = () => {
     return (
-        <section className="about-stroy py-12">
+        <section className="about-stroy md:pt-10 pt-5">
             <div className="container mx-auto flex flex-col md:flex-row gap-6 p-8">
                 {/* <!-- Text Container --> */}
                 <div className="flex-1 md:py-5">
-                    <h1 className="md:text-xlarge text-large font-bold text-primary pb-5">
+                    <h1 className="md:text-xlarge text-large text-center md:text-left font-bold text-primary pb-5">
                         Explore Our{' '}
-                        <span className="bg-gradient rounded-full text-[#1D49C3] font-bold ">
+                        <span className="bg-gradient  rounded-full text-[#1D49C3] font-bold ">
                             Case Studies
                         </span>{' '}
                     </h1>

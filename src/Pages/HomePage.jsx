@@ -8,15 +8,9 @@ import Pricing from './Pricing';
 import Satisfaction from './Satisfaction';
 import CaseStudies from './CaseStudies';
 import FAQ from './FAQ';
-// import Blog from './Blog';
+import Blog from './Blog';
 import Grow from './Grow';
-import Blogs from './Blogs';
-import blog1 from "../assets/Images/blog-img-1.webp";
-import blog2 from "../assets/Images/blog-img-2.webp";
-import blog3 from "../assets/Images/blog-img-3.webp";
-import blog4 from "../assets/Images/blog-img-4.webp";
-import blog5 from "../assets/Images/blog-img-5.webp";
-import blog6 from "../assets/Images/blog-img-6.webp";
+// import Blogs from './Blogs';
 
 const Home_Page = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
@@ -36,7 +30,7 @@ const Home_Page = () => {
     }, []);
 
     const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0 });
     };
 
     return (
@@ -50,15 +44,16 @@ const Home_Page = () => {
             <CaseStudies />
             <FAQ />
             <Grow />
-            <Blogs />
-            {showScrollButton && (
+            <Blog />
+            {/* <Blogs /> */}
+            {/* {showScrollButton && (
                 <button
                     onClick={scrollToTop}
-                    className="fixed md:bottom-28 md:right-12 bottom-36 right-4 bg-light-blue text-white md:p-2.5 p-2 rounded-full shadow-md cursor-pointer transition-opacity duration-300 opacity-100 hover:opacity-80 z-10"
+                    className="fixed md:bottom-28 md:right-12 bottom-36 right-4 bg-light-blue text-white md:p-2 p-1 rounded-full shadow-md cursor-pointer transition-opacity duration-300 opacity-100 hover:opacity-80 z-10"
                 >
                     <FiArrowUp className='size-5' />
                 </button>
-            )}
+            )} */}
         </div>
     );
 };

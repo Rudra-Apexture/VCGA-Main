@@ -23,26 +23,26 @@ const BlogDetail = () => {
             setLoading(true);
             setError(null);
             try {
-               const response = await axios.get(`https://vcga.uk/wp-json/wp/v2/posts?id=${blogSlug}&_embed`);
+                const response = await axios.get(`https://vcga.uk/wp-json/wp/v2/posts?id=${blogSlug}&_embed`);
 
                 if (response.status !== 200) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
 
-                 if (!response.data || response.data.length === 0) {
-                     setError("Post not found.");
+                if (!response.data || response.data.length === 0) {
+                    setError("Post not found.");
                     return;
-                 }
+                }
 
                 const post = response.data[0];
 
-                 const transformedBlog = {
+                const transformedBlog = {
                     id: post.id,
                     title: post.title.rendered,
                     content: post.content.rendered,
                     author: post._embedded?.author?.[0]?.name || 'Anonymous',
                     date: new Date(post.date).toLocaleDateString(),
-                     readTime: '5 min read',
+                    readTime: '5 min read',
                     category: post._embedded?.['wp:term']?.[0]?.[0]?.name || 'Uncategorized',
                     image: post.featured_media ? post._embedded?.['wp:featuredmedia']?.[0]?.source_url : null,
                 };
@@ -62,14 +62,14 @@ const BlogDetail = () => {
 
     useEffect(() => {
         if (blog && blogContentRef.current) {
-           const headings = Array.from(blogContentRef.current.querySelectorAll('h2, h3, h4, h5, h6'));
-           const newTocLinks = headings.map(heading => ({
-             id: slugify(heading.textContent),
-            text: heading.textContent
-           }));
+            const headings = Array.from(blogContentRef.current.querySelectorAll('h2, h3, h4, h5, h6'));
+            const newTocLinks = headings.map(heading => ({
+                id: slugify(heading.textContent),
+                text: heading.textContent
+            }));
 
-           setTocLinks(newTocLinks);
-           addIdsToHeadings();
+            setTocLinks(newTocLinks);
+            addIdsToHeadings();
         }
 
     }, [blog])
@@ -81,17 +81,17 @@ const BlogDetail = () => {
     const scrollToSection = (id) => {
         const element = blogContentRef.current.querySelector(`#${id}`);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView();
         }
     };
 
-   const addIdsToHeadings = () => {
+    const addIdsToHeadings = () => {
         if (!blog || !blogContentRef.current) return;
 
         const headings = blogContentRef.current.querySelectorAll('h2, h3, h4, h5, h6');
         headings.forEach((heading) => {
-             const slug = slugify(heading.textContent);
-              heading.setAttribute('id', slug);
+            const slug = slugify(heading.textContent);
+            heading.setAttribute('id', slug);
         });
     };
 
@@ -102,52 +102,49 @@ const BlogDetail = () => {
     if (error) {
         return <p>Error: {error}</p>;
     }
-    if (!blog) {
-        return <p>Blog post not found.</p>
-    }
 
     return (
         <>
-            <div>
+            <div className='Blog-Main'>
                 <BlogTop />
             </div>
             <div className="container mx-auto py-10">
                 <article className='my-12'>
                     <div className="flex flex-col lg:flex-row items-start border-b pb-10">
                         <div className="flex flex-col w-full lg:w-1/4 ">
-                            <div className="flex space-x-2 ">
+                            <div className="flex space-x-3">
                                 <h1 className="text-primary text-small font-medium flex items-center">Share</h1>
                                 {/* Facebook */}
                                 <a
-                                    href="#"
-                                    className="p-2.5 bg-gray-100 rounded-md hover:bg-gray-300 transition-colors"
+                                    href="https://www.facebook.com/share_channel/#"
+                                    className="p-2.5 bg-[#3B5998] rounded-md transition-colors"
                                     aria-label="Share on Facebook"
                                 >
-                                    <FaFacebook className="text-primary size-5 hover:text-white" />
+                                    <FaFacebook className="size-5 text-white" />
                                 </a>
                                 {/* Twitter */}
                                 <a
-                                    href="#"
-                                    className="p-2.5 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"
+                                    href="https://x.com/intent/post?url=https%3A%2F%2Fvcga.uk%2Fhow-credentone-elevated-their-online-presence-with-our-wordpress-maintenance-services%2F&=&="
+                                    className="p-2.5 bg-black rounded-md transition-colors"
                                     aria-label="Share on Twitter"
                                 >
-                                    <FaTwitter className="text-primary size-5 hover:text-white" />
+                                    <FaTwitter className="size-5 text-white" />
                                 </a>
                                 {/* LinkedIn */}
                                 <a
-                                    href="#"
-                                    className="p-2.5 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"
+                                    href="https://www.linkedin.com/feed/?linkOrigin=LI_BADGE&shareActive=true&shareUrl=https%3A%2F%2Fvcga.uk%2Fhow-credentone-elevated-their-online-presence-with-our-wordpress-maintenance-services%2F"
+                                    className="p-2.5 bg-[#0077B5] rounded-md transition-colors"
                                     aria-label="Share on LinkedIn"
                                 >
-                                    <FaLinkedinIn className="text-primary size-5 hover:text-white" />
+                                    <FaLinkedinIn className="size-5 text-white" />
                                 </a>
                                 {/* Email */}
                                 <a
-                                    href="#"
-                                    className="p-2.5 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"
+                                    href="mailto:info@vcga.com"
+                                    className="p-2.5 bg-[#EA4335] rounded-md transition-colors"
                                     aria-label="Share via Email"
                                 >
-                                    <FaEnvelope className="text-primary size-5 hover:text-white" />
+                                    <FaEnvelope className="size-5 text-white" />
                                 </a>
                             </div>
                             <div className='border-t w-60 my-5'>
@@ -164,7 +161,7 @@ const BlogDetail = () => {
                                     }`}
                             >
                                 {tocLinks.map((link) => (
-                                  <h1 key={link.id} className='text-primary font-medium text-small cursor-pointer hover:text-blue-500' onClick={() => scrollToSection(link.id)}>{link.text}</h1>
+                                    <h1 key={link.id} className='text-primary font-medium text-small cursor-pointer hover:text-blue-500' onClick={() => scrollToSection(link.id)}>{link.text}</h1>
                                 ))}
                             </div>
                         </div>

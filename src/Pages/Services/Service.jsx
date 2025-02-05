@@ -5,6 +5,9 @@ import Plan from './Plan'
 import Services from './Services'
 import ClientStory from './ClientStory'
 import Expert from './Expert'
+import CaseData from './CaseData'
+import Question from './Question'
+
 
 const Service = () => {
     return (
@@ -14,7 +17,9 @@ const Service = () => {
             <Plan />
             <Services />
             <ClientStory />
+            <CaseData />
             <Expert />
+            <Question />
         </main>
     )
 }

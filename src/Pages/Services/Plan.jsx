@@ -1,12 +1,9 @@
-import React from 'react'
-import HighlightedHeading from '../../components/HighlightedHeading'
-import { IoCheckmarkDoneSharp } from 'react-icons/io5';
-import mark from "../../assets/images/mark.svg";
-import { GiCheckMark } from "react-icons/gi";
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaTrophy, FaCheckCircle, FaMedal, FaCrown, FaGem } from "react-icons/fa";  // Trophy icon for highlighting
+import HighlightedHeading from '../../components/HighlightedHeading';
 
 const Plan = () => {
-
     const data = [
         {
             id: 1,
@@ -15,7 +12,7 @@ const Plan = () => {
             tag: "Silver",
             features: [
                 "High Speed SiteGround hosting free",
-                "WordPress core, themes, and plugins Updates",
+                "Core, Themes, and Plugins Updates",
                 "Cloud Backups: 14-day retention.",
                 "Uptime Monitoring",
                 "Speed & Performance Optimization",
@@ -24,9 +21,8 @@ const Plan = () => {
                 "Database Management",
                 "Image Optimization",
                 "Keyword Tracking",
-                "Monthly Maintenance Report",
                 "Unlimited 24/7 Email Support",
-                "Basic Security Monitoring, 24/7 real-time monitoring with firewall protection"
+                "Basic Security Monitoring, 24/7 real-time protection"
             ],
         },
         {
@@ -43,7 +39,7 @@ const Plan = () => {
                 "WooCommerce Optimization",
                 "Cart Abandonment Solutions",
                 "Bi-Weekly Detailed Reports",
-                "Unlimited 24/7 Email & Chat Priority Support",
+                "Unlimited 24/7 Chat Priority Support",
                 "Advanced (Firewall, Complete Malware Scan & Removal )"
             ],
         },
@@ -56,16 +52,15 @@ const Plan = () => {
                 "High Speed SiteGround hosting free",
                 "All Gold Plan Features",
                 "Git Management",
-                "Ongoing CRO strategies",
-                "Ongoing CRO strategies",
-                "Detailed SEO audits",
+                "Ongoing CRO Strategies",
+                "Detailed SEO Audits",
                 "Google Analytics Integration",
                 "Secure Payment Gateway Integration",
                 "Performance and Speed Optimization",
                 "White-Label Options for Agency",
                 "Weekly Comprehensive Reports",
-                "Unlimited 24/7 Email, Call & Chat Emergency Support",
                 "24/7 real-time security monitoring",
+                "Unlimited 24/7 Email, Call & Chat Emergency Support"
             ],
         },
     ];
@@ -73,79 +68,111 @@ const Plan = () => {
     const getTagStyle = (tag) => {
         switch (tag) {
             case "Silver":
-                return { backgroundColor: "#c9c9c9", color: "#3E4644" };
+                return {
+                    className: "bg-gray-100 text-gray-600",
+                    icon: <FaMedal className="inline-block mr-2 text-base" />, // Adjusted size and margin
+                };
             case "Gold":
-                return { backgroundColor: "#F7E8B3", color: "#E4B200" };
+                return {
+                    className: "bg-yellow-100 text-yellow-600",
+                    icon: <FaCrown className="inline-block mr-2 text-base" />,  // Adjusted size and margin
+                };
             case "Platinum":
-                return { backgroundColor: "#B3C7DC", color: "#00458A" };
+                return {
+                    className: "bg-blue-100 text-blue-600",
+                    icon: <FaGem className="inline-block mr-2 text-base" />,  // Adjusted size and margin
+                };
             default:
-                return { backgroundColor: "#e0e0e0", color: "#000" };
+                return {
+                    className: "bg-gray-200 text-gray-700",
+                    icon: null,
+                };
         }
     };
 
-
     return (
-        <section className='Maintenance-Plan pt-12'>
-            <div className='container mx-auto'>
-                <div className='text-center space-y-3.5'>
+        <section className="pt-14 bg-white" id='pricing-plan'>
+            <div className="container mx-auto">
+                <div className="flex flex-col pb-10 justify-center items-center">
                     <HighlightedHeading
                         mainText="WordPress Maintenance "
-                        highlightedText="Packages & Plans"
+                        highlightedText="Packages & Plans "
                         center={true}
                     />
-                    <p className='text-primary font-medium text-small md:pb-20 pb-10'>Choose a plan and take the frustration out of running a site.</p>
+                    <p className='text-primary font-medium text-small text-center mt-4'>Choose a plan and take the frustration out of running a site.</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:gap-6 gap-4">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     {data.map(item => (
-                        <div key={item.id} className="bg-white rounded-medium shadow-main border border-gray-300 p-6 flex flex-col space-y-4 relative">
-                            <div className={`rounded-md inline-block w-24 text-center p-1.5 text-small font-bold`} style={getTagStyle(item.tag)}>{item.tag}</div>
-                            <h3 className="lg:text-base text-medium font-semibold text-primary">{item.name}</h3>
-                            <div className="flex items-center mb-4">
-                                <span className="lg:text-5xl text-large font-bold text-primary">{item.price}</span>
-                                <span className="text-[#020D0AB2] font-medium ml-2 mt-6">Per Month</span>
-                            </div>
-                            <div className='py-2.5'>
-                                <hr />
-                            </div>
+                        <div
+                            key={item.id}
+                            className={`relative rounded-medium shadow-main bg-white hover:shadow-lg transition-shadow duration-300 flex flex-col ${item.isMostPopular ? 'border-4 border-light-blue' : 'border border-gray-300'
+                                }`} // Use flex column
+                        >
                             {item.isMostPopular && (
-                                <div className="absolute -top-[60px] -right-16 rounded-tl-medium rounded-tr-medium md:block hidden -translate-x-1/2 bg-light-blue text-white px-10 lg:px-20 py-2.5 text-center text-small font-medium">
-                                    Most Popular
+                                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-light-blue text-white py-2 px-6 rounded-full shadow-md text-sm font-bold flex items-center space-x-2">
+                                    <FaTrophy className="size-4" />
+                                    <span>Most Popular</span>
                                 </div>
                             )}
-                            <button className="bg-light-blue text-white py-3.5 rounded-md
-                                             border border-[#103498] text-medium inline-block text-center font-medium hover:bg-[#103498] transition-colors duration-200">View Full Plans</button>
-                            <ul className="list-inside list-none space-y-2">
-                                {/* Lists Items */}
-                                {item.features.map((feature, index) => (
-                                    <li key={index} className="flex items-center mt-2">
-                                        <GiCheckMark  className='size-4 text-light-blue mr-2' />
-                                        <span className={`text-small text-primary font-medium leading-7 max-w-64 ${index === 0 ? 'font-bold text-primary' : ''}`}>
-                                            {feature}
-                                        </span>
-                                    </li>
-                                ))}
-                            </ul>
+
+                            <div className="p-4 flex-grow"> {/* Allow content to grow */}
+                                <div>
+                                    <div className={`text-sm font-semibold uppercase tracking-wider text-center my-4 ${getTagStyle(item.tag).className} py-1.5 rounded flex items-center justify-center`}>
+                                        {getTagStyle(item.tag).icon} {item.tag}  {/* Icon before the text */}
+                                    </div>
+
+                                    <h3 className="text-base font-bold text-primary text-center mb-4">
+                                        {item.name}
+                                    </h3>
+
+                                    <div className="flex items-center justify-center mb-6">
+                                        <span className="text-5xl font-bold text-light-blue">{item.price}</span>
+                                        <span className="text-gray-500 ml-1">/ month</span>
+                                    </div>
+
+                                    <Link
+                                        to="/checkout"
+                                        className="block bg-light-blue hover:bg-blue-900 text-white py-4 rounded-lg text-center font-semibold transition-colors duration-300"
+                                    >
+                                        View Full Plans
+                                    </Link>
+                                </div>
+
+                                <div>
+                                    <ul className="space-y-4 mt-8">
+                                        {item.features.map((feature, index) => (
+                                            <li key={index} className="flex items-center text-primary font-medium">
+                                                <FaCheckCircle className="text-green-500 mr-2 size-4" />
+                                                {feature}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            {/* Feature-Link: ALWAYS AT THE BOTTOM */}
+                            <div className='py-6 flex flex-col justify-center items-center'>
+                                {item.tag === "Gold" && (
+                                    <Link
+                                        to="/contact-us" // Change the URL as needed
+                                        className="inline-block bg-light-blue hover:bg-blue-900 text-white px-5 py-1 rounded-full text-center font-medium transition-colors duration-300 mb-4"  // Add mt-4 for spacing
+                                    >
+                                        Customize Services? Contact!
+                                    </Link>
+                                )}
+
+                                <Link to="/see-pricing" className='text-center text-primary font-semibold text-medium'>
+                                    View all features
+                                </Link>
+
+                            </div>
+
                         </div>
                     ))}
                 </div>
-                <div className='mt-12 space-y-4'>
-                    <div className="bg-[#F3FFF3] border border-[#048504] md:gap-4 rounded-full md:p-5 p-2 flex items-center justify-center space-x-2">
-                        <img src={mark} alt="main-mark" className='h-8' />
-                        <p className="text-primary md:text-center text-start md:text-small text-xs font-medium">
-                            Every support plans we offer is covered by
-                            <span className="font-bold"> hassle-free money-back guarantee.</span>
-                        </p>
-                    </div>
-
-                    <p className="text-center text-light-blue md:text-small text-xs font-medium mt-3">
-                        Not sure which plan is right for you? Check out our
-                        in-depth feature comparison
-                        or Contact Us
-                    </p>
-                </div>
             </div>
-        </section>
-    )
-}
+        </section >
+    );
+};
 
-export default Plan
+export default Plan;
